@@ -1,0 +1,7 @@
+# Base de citations datees - une entree JSON par ligne (format JSONL).
+# Lignes vides et lignes commencant par # ignorees. Schema : data/quotes.schema.json.
+# Regles : text = copie exacte de la source (jamais redige ni reformule) ; source_url obligatoire ;
+# seules les entrees "verified": true sont affichees ; verified = un humain a ouvert la source et constate texte et date.
+# Ajouter une citation : coller une ligne sur le modele ci-dessous, puis commit ; la CI valide (python3 scripts/validate_quotes.py).
+# Modele (exemple non attribue a une declaration reelle, jamais affiche) :
+{"id":"exemple-2000-01-01-001","author":"trump","date":"2000-01-01","text":"EXEMPLE - remplacer par le texte exact copie depuis la source","lang":"en","medium":"other","context":"EXEMPLE - cadre factuel en une ligne","source_url":"https://example.org/","source_type":"archive","verified":false,"added":"2026-09-17","tags":["exemple"]}

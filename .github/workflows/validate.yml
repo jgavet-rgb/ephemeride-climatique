@@ -1,0 +1,51 @@
+name: Validation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installer les dependances de developpement
+        run: |
+          npm install --no-audit --no-fund
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r scripts/requirements.txt
+
+      - name: Tests JavaScript
+        run: node --test "tests/js/*.test.js"
+
+      - name: Tests Python
+        run: python3 -m unittest discover -s tests/python -p 'test_*.py'
+
+      - name: Validation des citations
+        run: python3 scripts/validate_quotes.py data/quotes.jsonl
+
+      - name: Validation des fichiers de donnees
+        run: python3 scripts/validate_data.py
+
+      - name: Verifier la syntaxe des modules
+        run: |
+          for file in $(find assets/js -name '*.js'); do
+            node --check "$file"
+          done
+
+      - name: Aucune constante climatique codee en dur
+        run: node scripts/check_sources.mjs

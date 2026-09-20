@@ -1,0 +1,22 @@
+id,text,isRetweet,isDeleted,device,favorites,retweets,date,isFlagged
+1001,Sample text about topic 001: a fabricated post written only to exercise the selection pipeline.,f,f,Sample device,1200,300,2019-03-04 14:22:10,f
+1002,RT @sample_account: Sample text about topic 002 that must be dropped because it starts with the retweet marker.,f,f,Sample device,50,900,2019-03-04 15:00:00,f
+1003,Sample text about topic 003 flagged as a retweet by the dedicated column and therefore dropped.,t,f,Sample device,10,5,2018-03-04 09:00:00,f
+1004,Too short sample 004,f,f,Sample device,3000,400,2019-03-05 10:00:00,f
+1005,https://example.com/sample-005 https://example.com/sample-005-bis,f,f,Sample device,3000,400,2019-03-05 11:00:00,f
+1006,Sample text about topic 001: a fabricated post written only to exercise the selection pipeline. https://t.co/sample006,f,f,Sample device,5000,1000,2020-03-04 08:00:00,f
+1007,"Sample text about topic 007 on the same calendar day as topic 001 but in another year, with low engagement.",f,f,Sample device,10,2,2017-03-04 20:00:00,f
+1008,"Sample text about topic 008 on the same calendar day as topic 001, third fabricated candidate for that day.",f,f,Sample device,500,100,2016-03-04 21:30:00,f
+1009,"Sample text about topic 009 on a different calendar day, used to check per-day grouping and the coverage report.",f,f,Sample device,800,100,2019-07-14 12:00:00,f
+1010,Sample text about topic 010 posted on a leap day to check that the 02-29 key is handled like any other key.,f,f,Sample device,700,80,2020-02-29 09:45:00,f
+1011,"Sample text about topic 011 dated after the platform rename, so its medium must be x rather than twitter.",f,f,Sample device,900,120,2023-09-10 16:00:00,f
+1012,@sample_account #sample @other_sample #again,f,f,Sample device,100,10,2019-01-01 00:30:00,f
+1013,Sample text about topic 013 that duplicates an existing verified entry of the test database for the dedup check.,f,f,Sample device,600,70,2021-05-05 18:00:00,f
+1014,"Sample text about topic 014 from an early year with small engagement numbers, to check the yearly normalization.",f,f,Sample device,50,10,2012-03-04 13:00:00,f
+1015,"Sample text about topic 015 with a missing date field, which must be discarded by the date filter of the pipeline.",f,f,Sample device,100,10,,f
+1016,"Sample text about topic 009 on a different calendar day, used to check per-day grouping and the coverage report.",f,f,Sample device,100,10,2022-07-14 12:00:00,f
+,"Sample text about topic 017 without any status identifier, to check the fallback source URL and the extra tag.",f,f,Sample device,200,20,2019-11-11 11:11:11,f
+1018,"Sample text about topic 018 from 2019 with moderate engagement, adding depth to the yearly percentile.",f,f,Sample device,300,50,2019-05-01 07:00:00,f
+1019,"Sample text about topic 019 from 2019 with high engagement, standing near the top of the yearly percentile.",f,f,Sample device,5000,1500,2019-06-02 19:00:00,f
+1020,"Sample text about topic 020 from 2019 with tiny engagement, sitting at the bottom of the yearly percentile.",f,f,Sample device,5,1,2019-08-03 06:00:00,f
+1021,"Sample text about topic 021, a second fabricated post on the same day as topic 019 with lower engagement.",f,f,Sample device,400,40,2019-06-02 21:00:00,f

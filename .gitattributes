@@ -1,0 +1,16 @@
+# Normalisation des fins de ligne : LF dans le depot, quel que soit le systeme.
+* text=auto eol=lf
+
+# Fichiers binaires eventuels (aucun aujourd'hui) : jamais convertis.
+*.png binary
+*.jpg binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.zip binary
+
+# Fichiers generes : diff peu lisible, exclus des statistiques de langage.
+data/climatology/*.json linguist-generated=true
+data/baselines.json     linguist-generated=true
+tests/fixtures/synthetic_series.json              linguist-generated=true
+tests/fixtures/synthetic_climatology_expected.json linguist-generated=true

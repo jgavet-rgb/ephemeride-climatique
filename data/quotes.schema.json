@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quotes.schema.json",
+  "title": "Citation datée",
+  "description": "Une ligne de data/quotes.jsonl. Le champ text est toujours une copie exacte de la source indiquée par source_url.",
+  "type": "object",
+  "required": ["id", "author", "date", "text", "lang", "medium", "source_url", "verified", "added"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^(trump|musk|exemple)-[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{3}$" },
+    "author": { "enum": ["trump", "musk"] },
+    "date": { "type": "string", "format": "date" },
+    "text": { "type": "string", "minLength": 10, "maxLength": 1000 },
+    "lang": { "enum": ["en", "fr"] },
+    "text_fr": { "type": "string", "maxLength": 1200 },
+    "translation": { "enum": ["machine", "human"] },
+    "medium": { "enum": ["twitter", "x", "truth_social", "speech", "interview", "press_conference", "earnings_call", "hearing", "book", "other"] },
+    "context": { "type": "string", "maxLength": 200 },
+    "source_url": { "type": "string", "format": "uri", "pattern": "^https?://" },
+    "source_type": { "enum": ["primary", "archive", "press"] },
+    "verified": { "type": "boolean" },
+    "added": { "type": "string", "format": "date" },
+    "tags": { "type": "array", "items": { "type": "string" }, "maxItems": 8 }
+  },
+  "dependentRequired": { "text_fr": ["translation"] }
+}

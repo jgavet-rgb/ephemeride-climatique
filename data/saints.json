@@ -1,0 +1,2586 @@
+{
+ "_source": "Calendrier des saints en France, releve le 17/09/2026 sur https://fr.wikipedia.org/wiki/Calendrier_des_saints_en_France (calendrier catholique usuel des prenoms)",
+ "_licence": "CC BY-SA 4.0 (Wikipedia). Champ saint = libelle de la source ; names = prenoms fetes deduits ; feast = fete liturgique fixe du jour.",
+ "_note": "Le 29 fevrier porte Auguste (entre parentheses dans la source : fete deplacee au 28 les annees non bissextiles).",
+ "days": {
+  "01-01": {
+   "saint": "Marie, mère de Dieu",
+   "names": [
+    "Marie"
+   ],
+   "feast": "Sainte Marie, mère de Dieu"
+  },
+  "01-02": {
+   "saint": "Basile de Césarée et Grégoire de Nazianze",
+   "names": [
+    "Basile",
+    "Grégoire"
+   ],
+   "feast": null
+  },
+  "01-03": {
+   "saint": "Geneviève",
+   "names": [
+    "Geneviève"
+   ],
+   "feast": null
+  },
+  "01-04": {
+   "saint": "Odilon",
+   "names": [
+    "Odilon"
+   ],
+   "feast": null
+  },
+  "01-05": {
+   "saint": "Édouard",
+   "names": [
+    "Édouard"
+   ],
+   "feast": null
+  },
+  "01-06": {
+   "saint": "Mélaine",
+   "names": [
+    "Mélaine"
+   ],
+   "feast": null
+  },
+  "01-07": {
+   "saint": "Raymond",
+   "names": [
+    "Raymond"
+   ],
+   "feast": null
+  },
+  "01-08": {
+   "saint": "Lucien",
+   "names": [
+    "Lucien"
+   ],
+   "feast": null
+  },
+  "01-09": {
+   "saint": "Alix",
+   "names": [
+    "Alix"
+   ],
+   "feast": null
+  },
+  "01-10": {
+   "saint": "Guillaume",
+   "names": [
+    "Guillaume"
+   ],
+   "feast": null
+  },
+  "01-11": {
+   "saint": "Paulin",
+   "names": [
+    "Paulin"
+   ],
+   "feast": null
+  },
+  "01-12": {
+   "saint": "Tatiana",
+   "names": [
+    "Tatiana"
+   ],
+   "feast": null
+  },
+  "01-13": {
+   "saint": "Yvette",
+   "names": [
+    "Yvette"
+   ],
+   "feast": null
+  },
+  "01-14": {
+   "saint": "Nina",
+   "names": [
+    "Nina"
+   ],
+   "feast": null
+  },
+  "01-15": {
+   "saint": "Rémi",
+   "names": [
+    "Rémi"
+   ],
+   "feast": null
+  },
+  "01-16": {
+   "saint": "Marcel",
+   "names": [
+    "Marcel"
+   ],
+   "feast": null
+  },
+  "01-17": {
+   "saint": "Roseline",
+   "names": [
+    "Roseline"
+   ],
+   "feast": null
+  },
+  "01-18": {
+   "saint": "Prisca",
+   "names": [
+    "Prisca"
+   ],
+   "feast": null
+  },
+  "01-19": {
+   "saint": "Marius",
+   "names": [
+    "Marius"
+   ],
+   "feast": null
+  },
+  "01-20": {
+   "saint": "Sébastien",
+   "names": [
+    "Sébastien"
+   ],
+   "feast": null
+  },
+  "01-21": {
+   "saint": "Agnès",
+   "names": [
+    "Agnès"
+   ],
+   "feast": null
+  },
+  "01-22": {
+   "saint": "Vincent",
+   "names": [
+    "Vincent"
+   ],
+   "feast": null
+  },
+  "01-23": {
+   "saint": "Barnard",
+   "names": [
+    "Barnard"
+   ],
+   "feast": null
+  },
+  "01-24": {
+   "saint": "François",
+   "names": [
+    "François"
+   ],
+   "feast": null
+  },
+  "01-25": {
+   "saint": "Ananie",
+   "names": [
+    "Ananie"
+   ],
+   "feast": "Conversion de Paul"
+  },
+  "01-26": {
+   "saint": "Paule",
+   "names": [
+    "Paule"
+   ],
+   "feast": null
+  },
+  "01-27": {
+   "saint": "Angèle",
+   "names": [
+    "Angèle"
+   ],
+   "feast": null
+  },
+  "01-28": {
+   "saint": "Thomas",
+   "names": [
+    "Thomas"
+   ],
+   "feast": null
+  },
+  "01-29": {
+   "saint": "Gildas",
+   "names": [
+    "Gildas"
+   ],
+   "feast": null
+  },
+  "01-30": {
+   "saint": "Martine",
+   "names": [
+    "Martine"
+   ],
+   "feast": null
+  },
+  "01-31": {
+   "saint": "Marcelle",
+   "names": [
+    "Marcelle"
+   ],
+   "feast": null
+  },
+  "02-01": {
+   "saint": "Ella",
+   "names": [
+    "Ella"
+   ],
+   "feast": null
+  },
+  "02-02": {
+   "saint": "Théophane",
+   "names": [
+    "Théophane"
+   ],
+   "feast": null
+  },
+  "02-03": {
+   "saint": "Blaise",
+   "names": [
+    "Blaise"
+   ],
+   "feast": null
+  },
+  "02-04": {
+   "saint": "Véronique",
+   "names": [
+    "Véronique"
+   ],
+   "feast": null
+  },
+  "02-05": {
+   "saint": "Agathe",
+   "names": [
+    "Agathe"
+   ],
+   "feast": null
+  },
+  "02-06": {
+   "saint": "Gaston",
+   "names": [
+    "Gaston"
+   ],
+   "feast": null
+  },
+  "02-07": {
+   "saint": "Eugénie",
+   "names": [
+    "Eugénie"
+   ],
+   "feast": null
+  },
+  "02-08": {
+   "saint": "Jacqueline",
+   "names": [
+    "Jacqueline"
+   ],
+   "feast": null
+  },
+  "02-09": {
+   "saint": "Apolline",
+   "names": [
+    "Apolline"
+   ],
+   "feast": null
+  },
+  "02-10": {
+   "saint": "Arnaud",
+   "names": [
+    "Arnaud"
+   ],
+   "feast": null
+  },
+  "02-11": {
+   "saint": "Héloïse",
+   "names": [
+    "Héloïse"
+   ],
+   "feast": "N.D. de Lourdes"
+  },
+  "02-12": {
+   "saint": "Félix",
+   "names": [
+    "Félix"
+   ],
+   "feast": null
+  },
+  "02-13": {
+   "saint": "Béatrice",
+   "names": [
+    "Béatrice"
+   ],
+   "feast": null
+  },
+  "02-14": {
+   "saint": "Valentin",
+   "names": [
+    "Valentin"
+   ],
+   "feast": null
+  },
+  "02-15": {
+   "saint": "Claude",
+   "names": [
+    "Claude"
+   ],
+   "feast": null
+  },
+  "02-16": {
+   "saint": "Julienne",
+   "names": [
+    "Julienne"
+   ],
+   "feast": null
+  },
+  "02-17": {
+   "saint": "Alexis",
+   "names": [
+    "Alexis"
+   ],
+   "feast": null
+  },
+  "02-18": {
+   "saint": "Bernadette",
+   "names": [
+    "Bernadette"
+   ],
+   "feast": null
+  },
+  "02-19": {
+   "saint": "Gabin",
+   "names": [
+    "Gabin"
+   ],
+   "feast": null
+  },
+  "02-20": {
+   "saint": "Aimée",
+   "names": [
+    "Aimée"
+   ],
+   "feast": null
+  },
+  "02-21": {
+   "saint": "Pierre-Damien",
+   "names": [
+    "Pierre-Damien"
+   ],
+   "feast": null
+  },
+  "02-22": {
+   "saint": "Isabelle",
+   "names": [
+    "Isabelle"
+   ],
+   "feast": null
+  },
+  "02-23": {
+   "saint": "Lazare",
+   "names": [
+    "Lazare"
+   ],
+   "feast": null
+  },
+  "02-24": {
+   "saint": "Modeste",
+   "names": [
+    "Modeste"
+   ],
+   "feast": null
+  },
+  "02-25": {
+   "saint": "Roméo",
+   "names": [
+    "Roméo"
+   ],
+   "feast": null
+  },
+  "02-26": {
+   "saint": "Nestor",
+   "names": [
+    "Nestor"
+   ],
+   "feast": null
+  },
+  "02-27": {
+   "saint": "Honorine",
+   "names": [
+    "Honorine"
+   ],
+   "feast": null
+  },
+  "02-28": {
+   "saint": "Romain",
+   "names": [
+    "Romain"
+   ],
+   "feast": null
+  },
+  "02-29": {
+   "saint": "Auguste",
+   "names": [
+    "Auguste"
+   ],
+   "feast": null
+  },
+  "03-01": {
+   "saint": "Aubin",
+   "names": [
+    "Aubin"
+   ],
+   "feast": null
+  },
+  "03-02": {
+   "saint": "Charles",
+   "names": [
+    "Charles"
+   ],
+   "feast": null
+  },
+  "03-03": {
+   "saint": "Guénolé",
+   "names": [
+    "Guénolé"
+   ],
+   "feast": null
+  },
+  "03-04": {
+   "saint": "Casimir",
+   "names": [
+    "Casimir"
+   ],
+   "feast": null
+  },
+  "03-05": {
+   "saint": "Olive",
+   "names": [
+    "Olive"
+   ],
+   "feast": null
+  },
+  "03-06": {
+   "saint": "Colette",
+   "names": [
+    "Colette"
+   ],
+   "feast": null
+  },
+  "03-07": {
+   "saint": "Félicité",
+   "names": [
+    "Félicité"
+   ],
+   "feast": null
+  },
+  "03-08": {
+   "saint": "Jean",
+   "names": [
+    "Jean"
+   ],
+   "feast": null
+  },
+  "03-09": {
+   "saint": "Françoise",
+   "names": [
+    "Françoise"
+   ],
+   "feast": null
+  },
+  "03-10": {
+   "saint": "Vivien",
+   "names": [
+    "Vivien"
+   ],
+   "feast": null
+  },
+  "03-11": {
+   "saint": "Rosine",
+   "names": [
+    "Rosine"
+   ],
+   "feast": null
+  },
+  "03-12": {
+   "saint": "Justine",
+   "names": [
+    "Justine"
+   ],
+   "feast": null
+  },
+  "03-13": {
+   "saint": "Rodrigue",
+   "names": [
+    "Rodrigue"
+   ],
+   "feast": null
+  },
+  "03-14": {
+   "saint": "Mathilde",
+   "names": [
+    "Mathilde"
+   ],
+   "feast": null
+  },
+  "03-15": {
+   "saint": "Louise",
+   "names": [
+    "Louise"
+   ],
+   "feast": null
+  },
+  "03-16": {
+   "saint": "Bénédicte",
+   "names": [
+    "Bénédicte"
+   ],
+   "feast": null
+  },
+  "03-17": {
+   "saint": "Patrice",
+   "names": [
+    "Patrice"
+   ],
+   "feast": null
+  },
+  "03-18": {
+   "saint": "Cyrille",
+   "names": [
+    "Cyrille"
+   ],
+   "feast": null
+  },
+  "03-19": {
+   "saint": "Joseph",
+   "names": [
+    "Joseph"
+   ],
+   "feast": null
+  },
+  "03-20": {
+   "saint": "Herbert",
+   "names": [
+    "Herbert"
+   ],
+   "feast": null
+  },
+  "03-21": {
+   "saint": "Clémence",
+   "names": [
+    "Clémence"
+   ],
+   "feast": null
+  },
+  "03-22": {
+   "saint": "Léa",
+   "names": [
+    "Léa"
+   ],
+   "feast": null
+  },
+  "03-23": {
+   "saint": "Victorien",
+   "names": [
+    "Victorien"
+   ],
+   "feast": null
+  },
+  "03-24": {
+   "saint": "Catherine",
+   "names": [
+    "Catherine"
+   ],
+   "feast": null
+  },
+  "03-25": {
+   "saint": "Humbert",
+   "names": [
+    "Humbert"
+   ],
+   "feast": null
+  },
+  "03-26": {
+   "saint": "Larissa",
+   "names": [
+    "Larissa"
+   ],
+   "feast": null
+  },
+  "03-27": {
+   "saint": "Habib",
+   "names": [
+    "Habib"
+   ],
+   "feast": null
+  },
+  "03-28": {
+   "saint": "Gontran",
+   "names": [
+    "Gontran"
+   ],
+   "feast": null
+  },
+  "03-29": {
+   "saint": "Gwladys",
+   "names": [
+    "Gwladys"
+   ],
+   "feast": null
+  },
+  "03-30": {
+   "saint": "Amédée",
+   "names": [
+    "Amédée"
+   ],
+   "feast": null
+  },
+  "03-31": {
+   "saint": "Benjamin",
+   "names": [
+    "Benjamin"
+   ],
+   "feast": null
+  },
+  "04-01": {
+   "saint": "Hugues",
+   "names": [
+    "Hugues"
+   ],
+   "feast": null
+  },
+  "04-02": {
+   "saint": "Sandrine, Alexandrine",
+   "names": [
+    "Sandrine",
+    "Alexandrine"
+   ],
+   "feast": null
+  },
+  "04-03": {
+   "saint": "Richard",
+   "names": [
+    "Richard"
+   ],
+   "feast": null
+  },
+  "04-04": {
+   "saint": "Isidore",
+   "names": [
+    "Isidore"
+   ],
+   "feast": null
+  },
+  "04-05": {
+   "saint": "Irène",
+   "names": [
+    "Irène"
+   ],
+   "feast": null
+  },
+  "04-06": {
+   "saint": "Marcellin",
+   "names": [
+    "Marcellin"
+   ],
+   "feast": null
+  },
+  "04-07": {
+   "saint": "Jean-Baptiste",
+   "names": [
+    "Jean-Baptiste"
+   ],
+   "feast": null
+  },
+  "04-08": {
+   "saint": "Julie",
+   "names": [
+    "Julie"
+   ],
+   "feast": null
+  },
+  "04-09": {
+   "saint": "Gauthier",
+   "names": [
+    "Gauthier"
+   ],
+   "feast": null
+  },
+  "04-10": {
+   "saint": "Fulbert",
+   "names": [
+    "Fulbert"
+   ],
+   "feast": null
+  },
+  "04-11": {
+   "saint": "Stanislas",
+   "names": [
+    "Stanislas"
+   ],
+   "feast": null
+  },
+  "04-12": {
+   "saint": "Jules",
+   "names": [
+    "Jules"
+   ],
+   "feast": null
+  },
+  "04-13": {
+   "saint": "Ida",
+   "names": [
+    "Ida"
+   ],
+   "feast": null
+  },
+  "04-14": {
+   "saint": "Maxime",
+   "names": [
+    "Maxime"
+   ],
+   "feast": null
+  },
+  "04-15": {
+   "saint": "Paterne",
+   "names": [
+    "Paterne"
+   ],
+   "feast": null
+  },
+  "04-16": {
+   "saint": "Benoît-Joseph",
+   "names": [
+    "Benoît-Joseph"
+   ],
+   "feast": null
+  },
+  "04-17": {
+   "saint": "Anicet",
+   "names": [
+    "Anicet"
+   ],
+   "feast": null
+  },
+  "04-18": {
+   "saint": "Parfait",
+   "names": [
+    "Parfait"
+   ],
+   "feast": null
+  },
+  "04-19": {
+   "saint": "Emma",
+   "names": [
+    "Emma"
+   ],
+   "feast": null
+  },
+  "04-20": {
+   "saint": "Odette",
+   "names": [
+    "Odette"
+   ],
+   "feast": null
+  },
+  "04-21": {
+   "saint": "Anselme",
+   "names": [
+    "Anselme"
+   ],
+   "feast": null
+  },
+  "04-22": {
+   "saint": "Alexandre",
+   "names": [
+    "Alexandre"
+   ],
+   "feast": null
+  },
+  "04-23": {
+   "saint": "Georges",
+   "names": [
+    "Georges"
+   ],
+   "feast": null
+  },
+  "04-24": {
+   "saint": "Fidèle",
+   "names": [
+    "Fidèle"
+   ],
+   "feast": null
+  },
+  "04-25": {
+   "saint": "Marc",
+   "names": [
+    "Marc"
+   ],
+   "feast": null
+  },
+  "04-26": {
+   "saint": "Alida",
+   "names": [
+    "Alida"
+   ],
+   "feast": null
+  },
+  "04-27": {
+   "saint": "Zita",
+   "names": [
+    "Zita"
+   ],
+   "feast": null
+  },
+  "04-28": {
+   "saint": "Valérie",
+   "names": [
+    "Valérie"
+   ],
+   "feast": null
+  },
+  "04-29": {
+   "saint": "Catherine",
+   "names": [
+    "Catherine"
+   ],
+   "feast": null
+  },
+  "04-30": {
+   "saint": "Robert",
+   "names": [
+    "Robert"
+   ],
+   "feast": null
+  },
+  "05-01": {
+   "saint": "Jérémie",
+   "names": [
+    "Jérémie"
+   ],
+   "feast": null
+  },
+  "05-02": {
+   "saint": "Boris",
+   "names": [
+    "Boris"
+   ],
+   "feast": null
+  },
+  "05-03": {
+   "saint": "Philippe, Jacques",
+   "names": [
+    "Philippe",
+    "Jacques"
+   ],
+   "feast": null
+  },
+  "05-04": {
+   "saint": "Sylvain",
+   "names": [
+    "Sylvain"
+   ],
+   "feast": null
+  },
+  "05-05": {
+   "saint": "Judith",
+   "names": [
+    "Judith"
+   ],
+   "feast": null
+  },
+  "05-06": {
+   "saint": "Prudence",
+   "names": [
+    "Prudence"
+   ],
+   "feast": null
+  },
+  "05-07": {
+   "saint": "Gisèle",
+   "names": [
+    "Gisèle"
+   ],
+   "feast": null
+  },
+  "05-08": {
+   "saint": "Désiré",
+   "names": [
+    "Désiré"
+   ],
+   "feast": null
+  },
+  "05-09": {
+   "saint": "Pacôme",
+   "names": [
+    "Pacôme"
+   ],
+   "feast": null
+  },
+  "05-10": {
+   "saint": "Solange",
+   "names": [
+    "Solange"
+   ],
+   "feast": null
+  },
+  "05-11": {
+   "saint": "Estelle",
+   "names": [
+    "Estelle"
+   ],
+   "feast": null
+  },
+  "05-12": {
+   "saint": "Achille",
+   "names": [
+    "Achille"
+   ],
+   "feast": null
+  },
+  "05-13": {
+   "saint": "Rolande",
+   "names": [
+    "Rolande"
+   ],
+   "feast": null
+  },
+  "05-14": {
+   "saint": "Matthias",
+   "names": [
+    "Matthias"
+   ],
+   "feast": null
+  },
+  "05-15": {
+   "saint": "Denise",
+   "names": [
+    "Denise"
+   ],
+   "feast": null
+  },
+  "05-16": {
+   "saint": "Honoré",
+   "names": [
+    "Honoré"
+   ],
+   "feast": null
+  },
+  "05-17": {
+   "saint": "Pascal",
+   "names": [
+    "Pascal"
+   ],
+   "feast": null
+  },
+  "05-18": {
+   "saint": "Éric",
+   "names": [
+    "Éric"
+   ],
+   "feast": null
+  },
+  "05-19": {
+   "saint": "Yves",
+   "names": [
+    "Yves"
+   ],
+   "feast": null
+  },
+  "05-20": {
+   "saint": "Bernardin",
+   "names": [
+    "Bernardin"
+   ],
+   "feast": null
+  },
+  "05-21": {
+   "saint": "Constantin",
+   "names": [
+    "Constantin"
+   ],
+   "feast": null
+  },
+  "05-22": {
+   "saint": "Émile",
+   "names": [
+    "Émile"
+   ],
+   "feast": null
+  },
+  "05-23": {
+   "saint": "Didier (de Vienne ou de Langres)",
+   "names": [
+    "Didier"
+   ],
+   "feast": null
+  },
+  "05-24": {
+   "saint": "Donatien",
+   "names": [
+    "Donatien"
+   ],
+   "feast": null
+  },
+  "05-25": {
+   "saint": "Sophie",
+   "names": [
+    "Sophie"
+   ],
+   "feast": null
+  },
+  "05-26": {
+   "saint": "Bérenger",
+   "names": [
+    "Bérenger"
+   ],
+   "feast": null
+  },
+  "05-27": {
+   "saint": "Augustin",
+   "names": [
+    "Augustin"
+   ],
+   "feast": null
+  },
+  "05-28": {
+   "saint": "Germain",
+   "names": [
+    "Germain"
+   ],
+   "feast": null
+  },
+  "05-29": {
+   "saint": "Aymard",
+   "names": [
+    "Aymard"
+   ],
+   "feast": null
+  },
+  "05-30": {
+   "saint": "Ferdinand",
+   "names": [
+    "Ferdinand"
+   ],
+   "feast": null
+  },
+  "05-31": {
+   "saint": "Perrine",
+   "names": [
+    "Perrine"
+   ],
+   "feast": "Visitation de la Vierge Marie"
+  },
+  "06-01": {
+   "saint": "Justin",
+   "names": [
+    "Justin"
+   ],
+   "feast": null
+  },
+  "06-02": {
+   "saint": "Blandine",
+   "names": [
+    "Blandine"
+   ],
+   "feast": null
+  },
+  "06-03": {
+   "saint": "Kévin",
+   "names": [
+    "Kévin"
+   ],
+   "feast": null
+  },
+  "06-04": {
+   "saint": "Clotilde",
+   "names": [
+    "Clotilde"
+   ],
+   "feast": null
+  },
+  "06-05": {
+   "saint": "Igor",
+   "names": [
+    "Igor"
+   ],
+   "feast": null
+  },
+  "06-06": {
+   "saint": "Norbert",
+   "names": [
+    "Norbert"
+   ],
+   "feast": null
+  },
+  "06-07": {
+   "saint": "Gilbert",
+   "names": [
+    "Gilbert"
+   ],
+   "feast": null
+  },
+  "06-08": {
+   "saint": "Médard",
+   "names": [
+    "Médard"
+   ],
+   "feast": null
+  },
+  "06-09": {
+   "saint": "Diane",
+   "names": [
+    "Diane"
+   ],
+   "feast": null
+  },
+  "06-10": {
+   "saint": "Landry",
+   "names": [
+    "Landry"
+   ],
+   "feast": null
+  },
+  "06-11": {
+   "saint": "Barnabé",
+   "names": [
+    "Barnabé"
+   ],
+   "feast": null
+  },
+  "06-12": {
+   "saint": "Guy",
+   "names": [
+    "Guy"
+   ],
+   "feast": null
+  },
+  "06-13": {
+   "saint": "Antoine",
+   "names": [
+    "Antoine"
+   ],
+   "feast": null
+  },
+  "06-14": {
+   "saint": "Élisée",
+   "names": [
+    "Élisée"
+   ],
+   "feast": null
+  },
+  "06-15": {
+   "saint": "Germaine",
+   "names": [
+    "Germaine"
+   ],
+   "feast": null
+  },
+  "06-16": {
+   "saint": "Jean-François",
+   "names": [
+    "Jean-François"
+   ],
+   "feast": null
+  },
+  "06-17": {
+   "saint": "Hervé",
+   "names": [
+    "Hervé"
+   ],
+   "feast": null
+  },
+  "06-18": {
+   "saint": "Léonce",
+   "names": [
+    "Léonce"
+   ],
+   "feast": null
+  },
+  "06-19": {
+   "saint": "Romuald",
+   "names": [
+    "Romuald"
+   ],
+   "feast": null
+  },
+  "06-20": {
+   "saint": "Silvère",
+   "names": [
+    "Silvère"
+   ],
+   "feast": null
+  },
+  "06-21": {
+   "saint": "Rodolphe",
+   "names": [
+    "Rodolphe"
+   ],
+   "feast": null
+  },
+  "06-22": {
+   "saint": "Alban",
+   "names": [
+    "Alban"
+   ],
+   "feast": null
+  },
+  "06-23": {
+   "saint": "Audrey",
+   "names": [
+    "Audrey"
+   ],
+   "feast": null
+  },
+  "06-24": {
+   "saint": "Jean-Baptiste",
+   "names": [
+    "Jean-Baptiste"
+   ],
+   "feast": null
+  },
+  "06-25": {
+   "saint": "Prosper",
+   "names": [
+    "Prosper"
+   ],
+   "feast": null
+  },
+  "06-26": {
+   "saint": "Anthelme",
+   "names": [
+    "Anthelme"
+   ],
+   "feast": null
+  },
+  "06-27": {
+   "saint": "Fernand",
+   "names": [
+    "Fernand"
+   ],
+   "feast": null
+  },
+  "06-28": {
+   "saint": "Irénée",
+   "names": [
+    "Irénée"
+   ],
+   "feast": null
+  },
+  "06-29": {
+   "saint": "Pierre/Paul",
+   "names": [
+    "Pierre",
+    "Paul"
+   ],
+   "feast": null
+  },
+  "06-30": {
+   "saint": "Martial",
+   "names": [
+    "Martial"
+   ],
+   "feast": null
+  },
+  "07-01": {
+   "saint": "Thierry",
+   "names": [
+    "Thierry"
+   ],
+   "feast": null
+  },
+  "07-02": {
+   "saint": "Martinien",
+   "names": [
+    "Martinien"
+   ],
+   "feast": null
+  },
+  "07-03": {
+   "saint": "Thomas",
+   "names": [
+    "Thomas"
+   ],
+   "feast": null
+  },
+  "07-04": {
+   "saint": "Florent",
+   "names": [
+    "Florent"
+   ],
+   "feast": null
+  },
+  "07-05": {
+   "saint": "Antoine",
+   "names": [
+    "Antoine"
+   ],
+   "feast": null
+  },
+  "07-06": {
+   "saint": "Mariette",
+   "names": [
+    "Mariette"
+   ],
+   "feast": null
+  },
+  "07-07": {
+   "saint": "Raoul",
+   "names": [
+    "Raoul"
+   ],
+   "feast": null
+  },
+  "07-08": {
+   "saint": "Thibaut",
+   "names": [
+    "Thibaut"
+   ],
+   "feast": null
+  },
+  "07-09": {
+   "saint": "Amandine",
+   "names": [
+    "Amandine"
+   ],
+   "feast": null
+  },
+  "07-10": {
+   "saint": "Ulrich",
+   "names": [
+    "Ulrich"
+   ],
+   "feast": null
+  },
+  "07-11": {
+   "saint": "Benoît",
+   "names": [
+    "Benoît"
+   ],
+   "feast": null
+  },
+  "07-12": {
+   "saint": "Olivier",
+   "names": [
+    "Olivier"
+   ],
+   "feast": null
+  },
+  "07-13": {
+   "saint": "Henri/Joël",
+   "names": [
+    "Henri",
+    "Joël"
+   ],
+   "feast": null
+  },
+  "07-14": {
+   "saint": "Camille",
+   "names": [
+    "Camille"
+   ],
+   "feast": null
+  },
+  "07-15": {
+   "saint": "Donald",
+   "names": [
+    "Donald"
+   ],
+   "feast": null
+  },
+  "07-16": {
+   "saint": "Carmen",
+   "names": [
+    "Carmen"
+   ],
+   "feast": "Notre-Dame du Mont-Carmel"
+  },
+  "07-17": {
+   "saint": "Charlotte",
+   "names": [
+    "Charlotte"
+   ],
+   "feast": null
+  },
+  "07-18": {
+   "saint": "Frédéric",
+   "names": [
+    "Frédéric"
+   ],
+   "feast": null
+  },
+  "07-19": {
+   "saint": "Arsène",
+   "names": [
+    "Arsène"
+   ],
+   "feast": null
+  },
+  "07-20": {
+   "saint": "Marina",
+   "names": [
+    "Marina"
+   ],
+   "feast": null
+  },
+  "07-21": {
+   "saint": "Victor",
+   "names": [
+    "Victor"
+   ],
+   "feast": null
+  },
+  "07-22": {
+   "saint": "Marie-Madeleine",
+   "names": [
+    "Marie-Madeleine"
+   ],
+   "feast": null
+  },
+  "07-23": {
+   "saint": "Brigitte",
+   "names": [
+    "Brigitte"
+   ],
+   "feast": null
+  },
+  "07-24": {
+   "saint": "Christine",
+   "names": [
+    "Christine"
+   ],
+   "feast": null
+  },
+  "07-25": {
+   "saint": "Jacques",
+   "names": [
+    "Jacques"
+   ],
+   "feast": null
+  },
+  "07-26": {
+   "saint": "Anne/Joachim",
+   "names": [
+    "Anne",
+    "Joachim"
+   ],
+   "feast": null
+  },
+  "07-27": {
+   "saint": "Nathalie",
+   "names": [
+    "Nathalie"
+   ],
+   "feast": null
+  },
+  "07-28": {
+   "saint": "Samson",
+   "names": [
+    "Samson"
+   ],
+   "feast": null
+  },
+  "07-29": {
+   "saint": "Marthe",
+   "names": [
+    "Marthe"
+   ],
+   "feast": null
+  },
+  "07-30": {
+   "saint": "Juliette",
+   "names": [
+    "Juliette"
+   ],
+   "feast": null
+  },
+  "07-31": {
+   "saint": "Ignace",
+   "names": [
+    "Ignace"
+   ],
+   "feast": null
+  },
+  "08-01": {
+   "saint": "Alphonse",
+   "names": [
+    "Alphonse"
+   ],
+   "feast": null
+  },
+  "08-02": {
+   "saint": "Julien",
+   "names": [
+    "Julien"
+   ],
+   "feast": null
+  },
+  "08-03": {
+   "saint": "Lydie",
+   "names": [
+    "Lydie"
+   ],
+   "feast": null
+  },
+  "08-04": {
+   "saint": "Jean-Marie",
+   "names": [
+    "Jean-Marie"
+   ],
+   "feast": null
+  },
+  "08-05": {
+   "saint": "Abel",
+   "names": [
+    "Abel"
+   ],
+   "feast": null
+  },
+  "08-06": {
+   "saint": "Octavien",
+   "names": [
+    "Octavien"
+   ],
+   "feast": "Transfiguration"
+  },
+  "08-07": {
+   "saint": "Gaétan",
+   "names": [
+    "Gaétan"
+   ],
+   "feast": null
+  },
+  "08-08": {
+   "saint": "Dominique",
+   "names": [
+    "Dominique"
+   ],
+   "feast": null
+  },
+  "08-09": {
+   "saint": "Amour",
+   "names": [
+    "Amour"
+   ],
+   "feast": null
+  },
+  "08-10": {
+   "saint": "Laurent",
+   "names": [
+    "Laurent"
+   ],
+   "feast": null
+  },
+  "08-11": {
+   "saint": "Claire",
+   "names": [
+    "Claire"
+   ],
+   "feast": null
+  },
+  "08-12": {
+   "saint": "Clarisse, Jeanne",
+   "names": [
+    "Clarisse",
+    "Jeanne"
+   ],
+   "feast": null
+  },
+  "08-13": {
+   "saint": "Hippolyte",
+   "names": [
+    "Hippolyte"
+   ],
+   "feast": null
+  },
+  "08-14": {
+   "saint": "Évrard",
+   "names": [
+    "Évrard"
+   ],
+   "feast": null
+  },
+  "08-15": {
+   "saint": "Marie",
+   "names": [
+    "Marie"
+   ],
+   "feast": "Assomption"
+  },
+  "08-16": {
+   "saint": "Armel",
+   "names": [
+    "Armel"
+   ],
+   "feast": null
+  },
+  "08-17": {
+   "saint": "Hyacinthe",
+   "names": [
+    "Hyacinthe"
+   ],
+   "feast": null
+  },
+  "08-18": {
+   "saint": "Hélène",
+   "names": [
+    "Hélène"
+   ],
+   "feast": null
+  },
+  "08-19": {
+   "saint": "Jean-Eudes",
+   "names": [
+    "Jean-Eudes"
+   ],
+   "feast": null
+  },
+  "08-20": {
+   "saint": "Bernard",
+   "names": [
+    "Bernard"
+   ],
+   "feast": null
+  },
+  "08-21": {
+   "saint": "Christophe",
+   "names": [
+    "Christophe"
+   ],
+   "feast": null
+  },
+  "08-22": {
+   "saint": "Fabrice",
+   "names": [
+    "Fabrice"
+   ],
+   "feast": null
+  },
+  "08-23": {
+   "saint": "Rose",
+   "names": [
+    "Rose"
+   ],
+   "feast": null
+  },
+  "08-24": {
+   "saint": "Barthélémy",
+   "names": [
+    "Barthélémy"
+   ],
+   "feast": null
+  },
+  "08-25": {
+   "saint": "Louis",
+   "names": [
+    "Louis"
+   ],
+   "feast": null
+  },
+  "08-26": {
+   "saint": "Natacha et Adrien",
+   "names": [
+    "Natacha",
+    "Adrien"
+   ],
+   "feast": null
+  },
+  "08-27": {
+   "saint": "Monique",
+   "names": [
+    "Monique"
+   ],
+   "feast": null
+  },
+  "08-28": {
+   "saint": "Augustin",
+   "names": [
+    "Augustin"
+   ],
+   "feast": null
+  },
+  "08-29": {
+   "saint": "Sabine",
+   "names": [
+    "Sabine"
+   ],
+   "feast": null
+  },
+  "08-30": {
+   "saint": "Fiacre",
+   "names": [
+    "Fiacre"
+   ],
+   "feast": null
+  },
+  "08-31": {
+   "saint": "Aristide",
+   "names": [
+    "Aristide"
+   ],
+   "feast": null
+  },
+  "09-01": {
+   "saint": "Gilles",
+   "names": [
+    "Gilles"
+   ],
+   "feast": null
+  },
+  "09-02": {
+   "saint": "Ingrid",
+   "names": [
+    "Ingrid"
+   ],
+   "feast": null
+  },
+  "09-03": {
+   "saint": "Grégoire",
+   "names": [
+    "Grégoire"
+   ],
+   "feast": null
+  },
+  "09-04": {
+   "saint": "Rosalie",
+   "names": [
+    "Rosalie"
+   ],
+   "feast": null
+  },
+  "09-05": {
+   "saint": "Raïssa",
+   "names": [
+    "Raïssa"
+   ],
+   "feast": null
+  },
+  "09-06": {
+   "saint": "Bertrand",
+   "names": [
+    "Bertrand"
+   ],
+   "feast": null
+  },
+  "09-07": {
+   "saint": "Reine, Régine, Réjane",
+   "names": [
+    "Reine",
+    "Régine",
+    "Réjane"
+   ],
+   "feast": null
+  },
+  "09-08": {
+   "saint": "Adrien",
+   "names": [
+    "Adrien"
+   ],
+   "feast": "Nativité de Marie"
+  },
+  "09-09": {
+   "saint": "Alain",
+   "names": [
+    "Alain"
+   ],
+   "feast": null
+  },
+  "09-10": {
+   "saint": "Inès",
+   "names": [
+    "Inès"
+   ],
+   "feast": null
+  },
+  "09-11": {
+   "saint": "Adelphe",
+   "names": [
+    "Adelphe"
+   ],
+   "feast": null
+  },
+  "09-12": {
+   "saint": "Apollinaire",
+   "names": [
+    "Apollinaire"
+   ],
+   "feast": null
+  },
+  "09-13": {
+   "saint": "Aimé (de Remiremont) ou (de Sion)",
+   "names": [
+    "Aimé ou"
+   ],
+   "feast": null
+  },
+  "09-14": {
+   "saint": "Cyprien",
+   "names": [
+    "Cyprien"
+   ],
+   "feast": "Fête de la Croix"
+  },
+  "09-15": {
+   "saint": "Roland",
+   "names": [
+    "Roland"
+   ],
+   "feast": null
+  },
+  "09-16": {
+   "saint": "Édith",
+   "names": [
+    "Édith"
+   ],
+   "feast": null
+  },
+  "09-17": {
+   "saint": "Renaud",
+   "names": [
+    "Renaud"
+   ],
+   "feast": null
+  },
+  "09-18": {
+   "saint": "Nadège",
+   "names": [
+    "Nadège"
+   ],
+   "feast": null
+  },
+  "09-19": {
+   "saint": "Émilie",
+   "names": [
+    "Émilie"
+   ],
+   "feast": null
+  },
+  "09-20": {
+   "saint": "Davy",
+   "names": [
+    "Davy"
+   ],
+   "feast": null
+  },
+  "09-21": {
+   "saint": "Matthieu",
+   "names": [
+    "Matthieu"
+   ],
+   "feast": null
+  },
+  "09-22": {
+   "saint": "Maurice",
+   "names": [
+    "Maurice"
+   ],
+   "feast": null
+  },
+  "09-23": {
+   "saint": "Constant",
+   "names": [
+    "Constant"
+   ],
+   "feast": null
+  },
+  "09-24": {
+   "saint": "Thècle",
+   "names": [
+    "Thècle"
+   ],
+   "feast": null
+  },
+  "09-25": {
+   "saint": "Hermann",
+   "names": [
+    "Hermann"
+   ],
+   "feast": null
+  },
+  "09-26": {
+   "saint": "Côme et Damien",
+   "names": [
+    "Côme",
+    "Damien"
+   ],
+   "feast": null
+  },
+  "09-27": {
+   "saint": "Vincent",
+   "names": [
+    "Vincent"
+   ],
+   "feast": null
+  },
+  "09-28": {
+   "saint": "Venceslas",
+   "names": [
+    "Venceslas"
+   ],
+   "feast": null
+  },
+  "09-29": {
+   "saint": "Michel",
+   "names": [
+    "Michel"
+   ],
+   "feast": null
+  },
+  "09-30": {
+   "saint": "Jérôme",
+   "names": [
+    "Jérôme"
+   ],
+   "feast": null
+  },
+  "10-01": {
+   "saint": "Thérèse",
+   "names": [
+    "Thérèse"
+   ],
+   "feast": null
+  },
+  "10-02": {
+   "saint": "Léger",
+   "names": [
+    "Léger"
+   ],
+   "feast": null
+  },
+  "10-03": {
+   "saint": "Gérard",
+   "names": [
+    "Gérard"
+   ],
+   "feast": null
+  },
+  "10-04": {
+   "saint": "François",
+   "names": [
+    "François"
+   ],
+   "feast": null
+  },
+  "10-05": {
+   "saint": "Fleur",
+   "names": [
+    "Fleur"
+   ],
+   "feast": null
+  },
+  "10-06": {
+   "saint": "Bruno",
+   "names": [
+    "Bruno"
+   ],
+   "feast": null
+  },
+  "10-07": {
+   "saint": "Serge",
+   "names": [
+    "Serge"
+   ],
+   "feast": null
+  },
+  "10-08": {
+   "saint": "Pélagie",
+   "names": [
+    "Pélagie"
+   ],
+   "feast": null
+  },
+  "10-09": {
+   "saint": "Denis",
+   "names": [
+    "Denis"
+   ],
+   "feast": null
+  },
+  "10-10": {
+   "saint": "Ghislain",
+   "names": [
+    "Ghislain"
+   ],
+   "feast": null
+  },
+  "10-11": {
+   "saint": "Firmin",
+   "names": [
+    "Firmin"
+   ],
+   "feast": null
+  },
+  "10-12": {
+   "saint": "Wilfried",
+   "names": [
+    "Wilfried"
+   ],
+   "feast": null
+  },
+  "10-13": {
+   "saint": "Géraud",
+   "names": [
+    "Géraud"
+   ],
+   "feast": null
+  },
+  "10-14": {
+   "saint": "Juste",
+   "names": [
+    "Juste"
+   ],
+   "feast": null
+  },
+  "10-15": {
+   "saint": "Aurélie, Thérèse",
+   "names": [
+    "Aurélie",
+    "Thérèse"
+   ],
+   "feast": null
+  },
+  "10-16": {
+   "saint": "Edwige",
+   "names": [
+    "Edwige"
+   ],
+   "feast": null
+  },
+  "10-17": {
+   "saint": "Baudouin",
+   "names": [
+    "Baudouin"
+   ],
+   "feast": null
+  },
+  "10-18": {
+   "saint": "Luc",
+   "names": [
+    "Luc"
+   ],
+   "feast": null
+  },
+  "10-19": {
+   "saint": "René",
+   "names": [
+    "René"
+   ],
+   "feast": null
+  },
+  "10-20": {
+   "saint": "Adeline",
+   "names": [
+    "Adeline"
+   ],
+   "feast": null
+  },
+  "10-21": {
+   "saint": "Céline",
+   "names": [
+    "Céline"
+   ],
+   "feast": null
+  },
+  "10-22": {
+   "saint": "Élodie",
+   "names": [
+    "Élodie"
+   ],
+   "feast": null
+  },
+  "10-23": {
+   "saint": "Jean",
+   "names": [
+    "Jean"
+   ],
+   "feast": null
+  },
+  "10-24": {
+   "saint": "Florentin",
+   "names": [
+    "Florentin"
+   ],
+   "feast": null
+  },
+  "10-25": {
+   "saint": "Crépin, Enguerrand",
+   "names": [
+    "Crépin",
+    "Enguerrand"
+   ],
+   "feast": null
+  },
+  "10-26": {
+   "saint": "Dimitri",
+   "names": [
+    "Dimitri"
+   ],
+   "feast": null
+  },
+  "10-27": {
+   "saint": "Emeline",
+   "names": [
+    "Emeline"
+   ],
+   "feast": null
+  },
+  "10-28": {
+   "saint": "Simon et Jude",
+   "names": [
+    "Simon",
+    "Jude"
+   ],
+   "feast": null
+  },
+  "10-29": {
+   "saint": "Narcisse",
+   "names": [
+    "Narcisse"
+   ],
+   "feast": null
+  },
+  "10-30": {
+   "saint": "Bienvenue",
+   "names": [
+    "Bienvenue"
+   ],
+   "feast": null
+  },
+  "10-31": {
+   "saint": "Quentin",
+   "names": [
+    "Quentin"
+   ],
+   "feast": null
+  },
+  "11-01": {
+   "saint": "Harold",
+   "names": [
+    "Harold"
+   ],
+   "feast": "Toussaint"
+  },
+  "11-02": {
+   "saint": "Océane",
+   "names": [
+    "Océane"
+   ],
+   "feast": "Défunts"
+  },
+  "11-03": {
+   "saint": "Hubert",
+   "names": [
+    "Hubert"
+   ],
+   "feast": null
+  },
+  "11-04": {
+   "saint": "Charles",
+   "names": [
+    "Charles"
+   ],
+   "feast": null
+  },
+  "11-05": {
+   "saint": "Sylvie",
+   "names": [
+    "Sylvie"
+   ],
+   "feast": null
+  },
+  "11-06": {
+   "saint": "Bertille",
+   "names": [
+    "Bertille"
+   ],
+   "feast": null
+  },
+  "11-07": {
+   "saint": "Carine",
+   "names": [
+    "Carine"
+   ],
+   "feast": null
+  },
+  "11-08": {
+   "saint": "Geoffroy",
+   "names": [
+    "Geoffroy"
+   ],
+   "feast": null
+  },
+  "11-09": {
+   "saint": "Théodore",
+   "names": [
+    "Théodore"
+   ],
+   "feast": null
+  },
+  "11-10": {
+   "saint": "Léon",
+   "names": [
+    "Léon"
+   ],
+   "feast": null
+  },
+  "11-11": {
+   "saint": "Martin",
+   "names": [
+    "Martin"
+   ],
+   "feast": null
+  },
+  "11-12": {
+   "saint": "Christian",
+   "names": [
+    "Christian"
+   ],
+   "feast": null
+  },
+  "11-13": {
+   "saint": "Brice",
+   "names": [
+    "Brice"
+   ],
+   "feast": null
+  },
+  "11-14": {
+   "saint": "Sidoine",
+   "names": [
+    "Sidoine"
+   ],
+   "feast": null
+  },
+  "11-15": {
+   "saint": "Albert",
+   "names": [
+    "Albert"
+   ],
+   "feast": null
+  },
+  "11-16": {
+   "saint": "Marguerite",
+   "names": [
+    "Marguerite"
+   ],
+   "feast": null
+  },
+  "11-17": {
+   "saint": "Élisabeth",
+   "names": [
+    "Élisabeth"
+   ],
+   "feast": null
+  },
+  "11-18": {
+   "saint": "Aude (de Trémazan ou de Paris)",
+   "names": [
+    "Aude"
+   ],
+   "feast": null
+  },
+  "11-19": {
+   "saint": "Tanguy",
+   "names": [
+    "Tanguy"
+   ],
+   "feast": null
+  },
+  "11-20": {
+   "saint": "Edmond",
+   "names": [
+    "Edmond"
+   ],
+   "feast": null
+  },
+  "11-21": {
+   "saint": "Rufus, Marie",
+   "names": [
+    "Rufus",
+    "Marie"
+   ],
+   "feast": null
+  },
+  "11-22": {
+   "saint": "Cécile",
+   "names": [
+    "Cécile"
+   ],
+   "feast": null
+  },
+  "11-23": {
+   "saint": "Clément",
+   "names": [
+    "Clément"
+   ],
+   "feast": "Christ roi"
+  },
+  "11-24": {
+   "saint": "Flora",
+   "names": [
+    "Flora"
+   ],
+   "feast": null
+  },
+  "11-25": {
+   "saint": "Catherine",
+   "names": [
+    "Catherine"
+   ],
+   "feast": null
+  },
+  "11-26": {
+   "saint": "Delphine",
+   "names": [
+    "Delphine"
+   ],
+   "feast": null
+  },
+  "11-27": {
+   "saint": "Séverin, Marie",
+   "names": [
+    "Séverin",
+    "Marie"
+   ],
+   "feast": null
+  },
+  "11-28": {
+   "saint": "Jacques",
+   "names": [
+    "Jacques"
+   ],
+   "feast": null
+  },
+  "11-29": {
+   "saint": "Saturnin",
+   "names": [
+    "Saturnin"
+   ],
+   "feast": null
+  },
+  "11-30": {
+   "saint": "André",
+   "names": [
+    "André"
+   ],
+   "feast": null
+  },
+  "12-01": {
+   "saint": "Florence",
+   "names": [
+    "Florence"
+   ],
+   "feast": null
+  },
+  "12-02": {
+   "saint": "Viviane",
+   "names": [
+    "Viviane"
+   ],
+   "feast": null
+  },
+  "12-03": {
+   "saint": "Xavier",
+   "names": [
+    "Xavier"
+   ],
+   "feast": null
+  },
+  "12-04": {
+   "saint": "Barbara",
+   "names": [
+    "Barbara"
+   ],
+   "feast": null
+  },
+  "12-05": {
+   "saint": "Gérald",
+   "names": [
+    "Gérald"
+   ],
+   "feast": null
+  },
+  "12-06": {
+   "saint": "Nicolas",
+   "names": [
+    "Nicolas"
+   ],
+   "feast": null
+  },
+  "12-07": {
+   "saint": "Ambroise",
+   "names": [
+    "Ambroise"
+   ],
+   "feast": null
+  },
+  "12-08": {
+   "saint": "Elfried",
+   "names": [
+    "Elfried"
+   ],
+   "feast": null
+  },
+  "12-09": {
+   "saint": "Pierre",
+   "names": [
+    "Pierre"
+   ],
+   "feast": null
+  },
+  "12-10": {
+   "saint": "Romaric",
+   "names": [
+    "Romaric"
+   ],
+   "feast": null
+  },
+  "12-11": {
+   "saint": "Daniel",
+   "names": [
+    "Daniel"
+   ],
+   "feast": null
+  },
+  "12-12": {
+   "saint": "Corentin",
+   "names": [
+    "Corentin"
+   ],
+   "feast": null
+  },
+  "12-13": {
+   "saint": "Lucie",
+   "names": [
+    "Lucie"
+   ],
+   "feast": null
+  },
+  "12-14": {
+   "saint": "Odile",
+   "names": [
+    "Odile"
+   ],
+   "feast": null
+  },
+  "12-15": {
+   "saint": "Ninon",
+   "names": [
+    "Ninon"
+   ],
+   "feast": null
+  },
+  "12-16": {
+   "saint": "Alice",
+   "names": [
+    "Alice"
+   ],
+   "feast": null
+  },
+  "12-17": {
+   "saint": "Gaël",
+   "names": [
+    "Gaël"
+   ],
+   "feast": null
+  },
+  "12-18": {
+   "saint": "Gatien",
+   "names": [
+    "Gatien"
+   ],
+   "feast": null
+  },
+  "12-19": {
+   "saint": "Urbain",
+   "names": [
+    "Urbain"
+   ],
+   "feast": null
+  },
+  "12-20": {
+   "saint": "Théophile, Ignace",
+   "names": [
+    "Théophile",
+    "Ignace"
+   ],
+   "feast": null
+  },
+  "12-21": {
+   "saint": "Pierre",
+   "names": [
+    "Pierre"
+   ],
+   "feast": null
+  },
+  "12-22": {
+   "saint": "Françoise-Xavière",
+   "names": [
+    "Françoise-Xavière"
+   ],
+   "feast": null
+  },
+  "12-23": {
+   "saint": "Armand",
+   "names": [
+    "Armand"
+   ],
+   "feast": null
+  },
+  "12-24": {
+   "saint": "Adèle",
+   "names": [
+    "Adèle"
+   ],
+   "feast": null
+  },
+  "12-25": {
+   "saint": "Emmanuel",
+   "names": [
+    "Emmanuel"
+   ],
+   "feast": null
+  },
+  "12-26": {
+   "saint": "Étienne",
+   "names": [
+    "Étienne"
+   ],
+   "feast": null
+  },
+  "12-27": {
+   "saint": "Jean",
+   "names": [
+    "Jean"
+   ],
+   "feast": null
+  },
+  "12-28": {
+   "saint": "Gaspard",
+   "names": [
+    "Gaspard"
+   ],
+   "feast": "Innocents"
+  },
+  "12-29": {
+   "saint": "David",
+   "names": [
+    "David"
+   ],
+   "feast": "Sainte Famille"
+  },
+  "12-30": {
+   "saint": "Roger",
+   "names": [
+    "Roger"
+   ],
+   "feast": null
+  },
+  "12-31": {
+   "saint": "Sylvestre",
+   "names": [
+    "Sylvestre"
+   ],
+   "feast": null
+  }
+ }
+}

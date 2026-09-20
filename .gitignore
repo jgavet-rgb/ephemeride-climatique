@@ -1,0 +1,16 @@
+# Archives brutes de citations deposees par le mainteneur : jamais versionnees
+data-sources/
+
+# Dependances et caches
+node_modules/
+__pycache__/
+*.pyc
+.pytest_cache/
+.cache/
+
+# Fichiers systeme et editeurs
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/

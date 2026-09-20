@@ -1,0 +1,119 @@
+[
+  {
+    "id_str": "2001",
+    "full_text": "Sample text about topic 101: a fabricated post for the second author, used only in tests.",
+    "created_at": "Fri Dec 06 20:31:11 +0000 2019",
+    "favorite_count": 15000,
+    "retweet_count": 2000,
+    "retweeted": false,
+    "lang": "en"
+  },
+  {
+    "id_str": "2002",
+    "full_text": "Sample text about topic 102 published after the rename of the platform, so the medium must be x.",
+    "created_at": "Mon Aug 14 09:15:00 +0000 2023",
+    "favorite_count": 40000,
+    "retweet_count": 3000,
+    "retweeted": false,
+    "lang": "en"
+  },
+  {
+    "id_str": "2003",
+    "full_text": "RT @sample_account: Sample text about topic 103 that is a retweet by its marker and must be dropped.",
+    "created_at": "Sat Jan 04 10:00:00 +0000 2020",
+    "favorite_count": 0,
+    "retweet_count": 5000,
+    "retweeted": false,
+    "lang": "en"
+  },
+  {
+    "id_str": "2004",
+    "full_text": "Sample text about topic 104 flagged retweeted true in the metadata, so it must be dropped as well.",
+    "created_at": "Sun Jan 05 10:00:00 +0000 2020",
+    "favorite_count": 100,
+    "retweet_count": 10,
+    "retweeted": true,
+    "lang": "en"
+  },
+  {
+    "id_str": "2005",
+    "full_text": "Short sample 105",
+    "created_at": "Mon Jan 06 10:00:00 +0000 2020",
+    "favorite_count": 90000,
+    "retweet_count": 9000,
+    "retweeted": false,
+    "lang": "en"
+  },
+  {
+    "id_str": "2006",
+    "full_text": "Sample text about topic 101: a fabricated post for the second author, used only in tests. (repost)",
+    "created_at": "Tue Dec 06 20:31:11 +0000 2022",
+    "favorite_count": 100,
+    "retweet_count": 10,
+    "retweeted": false,
+    "lang": "en"
+  },
+  {
+    "id_str": "2007",
+    "full_text": "Sample text about topic 107 on the same calendar day as topic 101 but two years later, with lower engagement.",
+    "created_at": "Mon Dec 06 12:00:00 +0000 2021",
+    "favorite_count": 3000,
+    "retweet_count": 200,
+    "retweeted": false,
+    "lang": "en"
+  },
+  {
+    "id_str": "2008",
+    "full_text": "Sample text about topic 108 on a leap day for the second author, to check the 02-29 key once more.",
+    "created_at": "Sat Feb 29 08:00:00 +0000 2020",
+    "favorite_count": 9000,
+    "retweet_count": 700,
+    "retweeted": false,
+    "lang": "en"
+  },
+  {
+    "id_str": "2009",
+    "full_text": "Sample text about topic 109 from the year 2012 with small counts, to check the per-year normalization of the score.",
+    "created_at": "Wed Mar 07 08:00:00 +0000 2012",
+    "favorite_count": 120,
+    "retweet_count": 30,
+    "retweeted": false,
+    "lang": "en"
+  },
+  {
+    "id_str": "2010",
+    "full_text": "Sample text about topic 110 with an ISO timestamp instead of the classic format, to check the date parser.",
+    "created_at": "2024-03-15T18:45:00.000Z",
+    "favorite_count": 25000,
+    "retweet_count": 1800,
+    "retweeted": false,
+    "lang": "en"
+  },
+  {
+    "id_str": "2011",
+    "full_text": "Sample text about topic 111 with a plain date-time string, to check another accepted date format.",
+    "created_at": "2018-11-20 07:30:00",
+    "favorite_count": 800,
+    "retweet_count": 60,
+    "retweeted": false,
+    "lang": "en"
+  },
+  {
+    "id_str": "2012",
+    "full_text": "Sample text about topic 112 without any creation date, which must be discarded by the date filter.",
+    "created_at": null,
+    "favorite_count": 800,
+    "retweet_count": 60,
+    "retweeted": false,
+    "lang": "en"
+  },
+  {
+    "id_str": "2013",
+    "full_text": "Sample text about topic 113 on the same calendar day as topic 102, one year later, to compete for that day.",
+    "created_at": "Wed Aug 14 09:15:00 +0000 2024",
+    "favorite_count": 1000,
+    "retweet_count": 50,
+    "retweeted": false,
+    "lang": "en"
+  }
+]

@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'self'; img-src data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex, nofollow">
+<title>Revue des citations candidates — Éphéméride climatique</title>
+<style>
+/* Page de revue locale. Reprend les variables et les conventions visuelles de
+   assets/css/app.css ; volontairement recopiées ici car cette page doit rester
+   autonome (ouverture en file://). */
+
+:root {
+  --bg: #f6f7f9;
+  --card: #ffffff;
+  --text: #1b1f24;
+  --muted: #5c6470;
+  --line: #d9dee5;
+  --accent: #1d3557;
+  --accent-text: #ffffff;
+  --warm: #b2182b;
+  --cold: #2166ac;
+  --focus: #f4a582;
+  --ok: #1b6b45;
+  --radius: 12px;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.05);
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --head-h: 132px;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12161c;
+    --card: #1b2129;
+    --text: #e8ebef;
+    --muted: #9aa4b1;
+    --line: #2c3541;
+    --accent: #a8c5e6;
+    --accent-text: #0f1a2a;
+    --warm: #ef8a92;
+    --ok: #7bd3a0;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.3);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #12161c;
+  --card: #1b2129;
+  --text: #e8ebef;
+  --muted: #9aa4b1;
+  --line: #2c3541;
+  --accent: #a8c5e6;
+  --accent-text: #0f1a2a;
+  --warm: #ef8a92;
+  --ok: #7bd3a0;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a { color: var(--accent); }
+a:hover { text-decoration-thickness: 2px; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+h1 { font-size: 1.4rem; margin: 0; line-height: 1.2; }
+h2 { font-size: 1.1rem; margin: 0; }
+h3 { font-size: 1rem; margin: 0; }
+p { margin: 6px 0; }
+code, kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.86em; }
+kbd { border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px; padding: 0 5px; background: var(--card); }
+
+.muted { color: var(--muted); }
+.small { font-size: 0.9rem; }
+.error { color: var(--warm); }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.skip { position: absolute; left: -999px; top: 0; background: var(--accent); color: var(--accent-text); padding: 8px 12px; z-index: 100; }
+.skip:focus { left: 8px; top: 8px; }
+
+.page { max-width: 1320px; margin: 0 auto; padding: 0 14px 56px; }
+
+/* Buttons and chips */
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 6px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--card);
+  color: var(--text); text-decoration: none; cursor: pointer; line-height: 1.2;
+}
+.btn:hover { border-color: var(--accent); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.btn.is-active { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+.btn-small { padding: 3px 9px; font-size: 0.9rem; }
+.btn-primary { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+.btn-ok.is-on { background: var(--ok); border-color: var(--ok); color: var(--bg); }
+.btn-no.is-on { background: var(--warm); border-color: var(--warm); color: var(--bg); }
+
+.chip {
+  display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px;
+  border: 1px solid var(--line); border-radius: 999px; font-size: 0.86rem; white-space: nowrap;
+}
+.chip strong { font-variant-numeric: tabular-nums; }
+.chip-ok { border-color: var(--ok); color: var(--ok); }
+.chip-warm { border-color: var(--warm); color: var(--warm); }
+
+/* Sticky header */
+
+.topbar {
+  position: sticky; top: 0; z-index: 20; background: var(--bg);
+  border-bottom: 1px solid var(--line); padding: 8px 0 10px; margin-bottom: 14px;
+}
+.topbar-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.topbar-row + .topbar-row { margin-top: 6px; }
+.topbar .spacer { margin-left: auto; }
+.counts { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; }
+
+.sources { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: flex-end; }
+.source-field { display: flex; flex-direction: column; gap: 2px; }
+.source-field label { font-size: 0.9rem; color: var(--muted); }
+input[type="file"] { font: inherit; font-size: 0.9rem; max-width: 100%; }
+
+select, input[type="text"], textarea {
+  font: inherit; padding: 5px 8px; border: 1px solid var(--line); border-radius: 8px;
+  background: var(--card); color: var(--text); max-width: 100%;
+}
+textarea { width: 100%; resize: vertical; }
+
+/* Layout */
+
+.layout { display: grid; grid-template-columns: 1fr; gap: 18px; align-items: start; }
+@media (min-width: 1000px) { .layout { grid-template-columns: 236px minmax(0, 1fr); } }
+
+.days-panel { border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); box-shadow: var(--shadow); padding: 10px 12px; }
+@media (min-width: 1000px) {
+  .days-panel { position: sticky; top: calc(var(--head-h) + 8px); max-height: calc(100vh - var(--head-h) - 24px); overflow: auto; }
+}
+.days-panel h2 { font-size: 0.95rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 6px; }
+.days-list { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px; }
+@media (min-width: 1000px) { .days-list { flex-direction: column; flex-wrap: nowrap; gap: 2px; } }
+.day-btn {
+  display: flex; align-items: center; gap: 6px; width: 100%; text-align: left;
+  border: 1px solid transparent; border-radius: 7px; background: transparent; cursor: pointer;
+  padding: 3px 7px; font-variant-numeric: tabular-nums; font-size: 0.92rem;
+}
+.day-btn:hover { border-color: var(--accent); }
+.day-btn .k { font-weight: 600; }
+.day-btn .n { color: var(--muted); font-size: 0.85rem; }
+.day-btn .v { margin-left: auto; color: var(--muted); font-size: 0.85rem; }
+.day-btn.is-done { border-left: 4px solid var(--ok); background: color-mix(in srgb, var(--ok) 14%, transparent); }
+.day-btn.is-done .k { font-weight: 700; }
+.day-btn.is-done .v { color: var(--ok); font-weight: 700; }
+
+/* Day sections and cards */
+
+.day-section { scroll-margin-top: calc(var(--head-h) + 10px); margin: 0 0 22px; }
+.day-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; padding: 4px 0 6px; border-bottom: 2px solid var(--line); margin-bottom: 10px; }
+.day-head h2 { font-variant-numeric: tabular-nums; }
+.day-section.is-done .day-head { border-bottom-color: var(--ok); }
+
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 12px 14px; margin: 0 0 12px;
+}
+.cand.is-current { outline: 3px solid var(--focus); outline-offset: 2px; }
+.cand.is-verified { border-left: 5px solid var(--ok); }
+.cand.is-rejected { border-left: 5px solid var(--warm); opacity: 0.55; }
+.cand.is-dup { border-left: 5px dashed var(--muted); }
+.cand-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; margin-bottom: 8px; }
+.cand-head h3 { margin-right: 4px; }
+.cand-id { color: var(--muted); }
+
+.src-text {
+  white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; margin: 0 0 10px;
+  padding: 10px 12px; background: var(--bg); border: 1px solid var(--line);
+  border-left: 4px solid var(--accent); border-radius: 8px; font-size: 1.02rem;
+}
+textarea.src-text { white-space: pre-wrap; display: block; }
+.cand-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 0 0 8px; }
+.cand-tags { display: flex; flex-wrap: wrap; gap: 5px; margin: 0 0 8px; }
+
+.fields { display: grid; grid-template-columns: 1fr; gap: 10px 18px; margin: 10px 0 0; }
+@media (min-width: 760px) { .fields { grid-template-columns: 1fr 1fr; } }
+.field { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.field > label { font-size: 0.9rem; color: var(--muted); }
+.field-wide { grid-column: 1 / -1; }
+.field-inline { flex-direction: row; align-items: center; gap: 6px; }
+.counter { margin: 0; font-size: 0.8rem; color: var(--muted); font-variant-numeric: tabular-nums; align-self: flex-end; }
+.counter.is-over { color: var(--warm); font-weight: 700; }
+.check { display: flex; align-items: center; gap: 6px; }
+.check label { font-size: 0.92rem; }
+
+.unlock-warn { margin: 8px 0 0; padding: 6px 10px; border: 1px solid var(--warm); border-radius: 8px; color: var(--warm); font-size: 0.9rem; }
+.errors { margin: 8px 0 0; padding: 0 0 0 20px; color: var(--warm); font-size: 0.9rem; }
+.errors:empty { display: none; }
+.notes { margin: 6px 0 0; padding: 0 0 0 20px; color: var(--muted); font-size: 0.9rem; }
+.notes:empty { display: none; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; }
+
+.placeholder { padding: 10px 0; }
+
+/* Warnings, export, toast, drop zone */
+
+.warnbox { border: 1px solid var(--warm); border-radius: var(--radius); padding: 10px 14px; margin: 0 0 14px; background: var(--card); }
+.warnbox h2 { color: var(--warm); font-size: 1rem; margin-bottom: 4px; }
+.warnbox ul { margin: 6px 0; padding-left: 20px; font-size: 0.92rem; }
+.warnbox .close { float: right; }
+
+#export-text { width: 100%; min-height: 160px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.82rem; white-space: pre; }
+.export-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 6px; }
+
+.toasts { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); display: flex; flex-direction: column; gap: 6px; z-index: 60; max-width: 90vw; }
+.toast { background: var(--text); color: var(--bg); padding: 8px 14px; border-radius: 8px; box-shadow: var(--shadow); }
+
+.dropzone {
+  position: fixed; inset: 0; z-index: 80; display: flex; align-items: center; justify-content: center;
+  background: rgba(29, 53, 87, 0.72); color: #fff; font-size: 1.3rem; text-align: center; padding: 24px;
+  pointer-events: none;
+}
+.dropzone[hidden] { display: none; }
+
+.help ul { margin: 6px 0; padding-left: 20px; }
+.help li { margin: 2px 0; }
+details > summary { cursor: pointer; }
+
+.footer { margin-top: 26px; padding-top: 12px; border-top: 1px solid var(--line); font-size: 0.9rem; color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#liste">Aller à la liste des candidats</a>
+
+<div class="page">
+
+  <header class="topbar">
+    <div class="topbar-row">
+      <h1>Revue des citations candidates</h1>
+      <span class="muted small">Étape humaine avant <code>data/quotes.jsonl</code></span>
+      <span class="spacer"></span>
+      <button type="button" class="btn btn-small" id="theme-btn">Thème : auto</button>
+      <button type="button" class="btn btn-small" id="reset-btn">Réinitialiser la revue</button>
+    </div>
+    <div class="topbar-row">
+      <p class="counts" id="counts" aria-live="polite" aria-atomic="true">
+        <span class="chip"><strong id="c-total">0</strong>&nbsp;candidats</span>
+        <span class="chip chip-ok"><strong id="c-verified">0</strong>&nbsp;vérifiés</span>
+        <span class="chip"><strong id="c-rejected">0</strong>&nbsp;rejetés</span>
+        <span class="chip"><strong id="c-dup">0</strong>&nbsp;doublons</span>
+        <span class="chip"><strong id="c-days">0</strong>/366&nbsp;jours couverts</span>
+        <span class="chip"><strong id="c-export">0</strong>&nbsp;lignes exportables</span>
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="card" aria-labelledby="h-sources">
+      <h2 id="h-sources">1. Charger les fichiers</h2>
+      <div class="sources">
+        <div class="source-field">
+          <label for="file-cand">Fichier de candidats (<code>data/quotes.candidates.jsonl</code>)</label>
+          <input type="file" id="file-cand" accept=".jsonl,.json,.txt">
+        </div>
+        <div class="source-field">
+          <label for="file-base">Base existante, facultative (<code>data/quotes.jsonl</code>)</label>
+          <input type="file" id="file-base" accept=".jsonl,.json,.txt">
+        </div>
+        <div class="source-field">
+          <span class="muted small" id="fetch-label">Ou, si la page est servie en http&nbsp;:</span>
+          <span>
+            <button type="button" class="btn btn-small" id="fetch-cand">Charger ../data/quotes.candidates.jsonl</button>
+            <button type="button" class="btn btn-small" id="fetch-base">Charger ../data/quotes.jsonl</button>
+          </span>
+        </div>
+      </div>
+      <p class="small muted" id="load-state">Aucun fichier chargé. Vous pouvez aussi déposer les fichiers n’importe où sur la page.</p>
+      <p class="small muted">
+        Les identifiants et les textes déjà présents dans <code>data/quotes.jsonl</code> sont signalés comme doublons et exclus de l’export.
+        Pour essayer la page sans données&nbsp;: <button type="button" class="btn btn-small" id="demo-btn">charger un jeu de démonstration</button>.
+      </p>
+    </section>
+
+    <div id="warnings"></div>
+
+    <section class="card" aria-labelledby="h-filters">
+      <h2 id="h-filters">2. Relire, corriger, décider</h2>
+      <div class="topbar-row">
+        <span class="field field-inline">
+          <label for="f-status">Statut</label>
+          <select id="f-status">
+            <option value="all">tous</option>
+            <option value="pending">à traiter</option>
+            <option value="verified">vérifiés</option>
+            <option value="rejected">rejetés</option>
+          </select>
+        </span>
+        <span class="field field-inline">
+          <label for="f-author">Auteur</label>
+          <select id="f-author">
+            <option value="all">les deux</option>
+            <option value="trump">Donald Trump</option>
+            <option value="musk">Elon Musk</option>
+          </select>
+        </span>
+        <span class="check">
+          <input type="checkbox" id="f-dup">
+          <label for="f-dup">Masquer les doublons</label>
+        </span>
+        <span class="spacer"></span>
+        <span class="muted small" id="filter-count"></span>
+      </div>
+      <details class="help">
+        <summary>Raccourcis clavier et règles de la revue</summary>
+        <ul>
+          <li><kbd>j</kbd> ou <kbd>↓</kbd> — candidat suivant</li>
+          <li><kbd>k</kbd> ou <kbd>↑</kbd> — candidat précédent</li>
+          <li><kbd>v</kbd> — marquer « vérifié » (une seconde fois&nbsp;: revenir à « à traiter »)</li>
+          <li><kbd>r</kbd> — rejeter (une seconde fois&nbsp;: revenir à « à traiter »)</li>
+          <li><kbd>o</kbd> — ouvrir la source dans un nouvel onglet</li>
+        </ul>
+        <p class="muted small">Les raccourcis sont sans effet pendant la saisie dans un champ.</p>
+        <p class="muted small">
+          Règle du projet&nbsp;: <code>text</code> est la copie exacte de la source, jamais un texte rédigé ni reformulé.
+          « Vérifié » signifie qu’un humain a ouvert <code>source_url</code> et constaté le texte et la date.
+          Le contexte est une ligne factuelle, la traduction est facultative.
+        </p>
+      </details>
+    </section>
+
+    <div class="layout">
+      <nav class="days-panel" aria-labelledby="h-days">
+        <h2 id="h-days">Jours (MM-JJ)</h2>
+        <p class="small muted" id="days-summary">Aucun jour chargé.</p>
+        <ul class="days-list" id="days-list"></ul>
+        <details id="missing-box">
+          <summary class="small">Jours sans citation vérifiée (<span id="c-missing">366</span>)</summary>
+          <p class="small muted" id="missing-list"></p>
+        </details>
+      </nav>
+
+      <div id="liste">
+        <p class="muted" id="empty-state">Chargez <code>data/quotes.candidates.jsonl</code> pour commencer la revue.</p>
+        <div id="days-container"></div>
+      </div>
+    </div>
+
+    <section class="card" aria-labelledby="h-export">
+      <h2 id="h-export">3. Exporter</h2>
+      <p class="small muted">
+        Les lignes ci-dessous sont à ajouter telles quelles à la fin de <code>data/quotes.jsonl</code> (une ligne par citation),
+        puis à valider&nbsp;: la CI exécute <code>python3 scripts/validate_quotes.py</code> sur le fichier complet.
+        Seules les entrées vérifiées, valides et non dupliquées sont exportées&nbsp;; <code>verified</code> passe à <code>true</code>
+        et <code>added</code> prend la date du jour.
+      </p>
+      <label for="export-text" class="small muted">Aperçu des lignes produites (lecture seule)</label>
+      <textarea id="export-text" readonly spellcheck="false" aria-describedby="export-hint"></textarea>
+      <p class="small muted" id="export-hint">Vérifiez cet aperçu avant de télécharger ou de copier.</p>
+      <div class="export-actions">
+        <button type="button" class="btn btn-primary" id="download-btn">Exporter les lignes vérifiées (.jsonl)</button>
+        <button type="button" class="btn" id="copy-btn">Copier dans le presse-papier</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>
+        Cette page ne communique avec aucun serveur&nbsp;: les fichiers sont lus dans le navigateur, l’export est un téléchargement local.
+        La revue en cours est enregistrée dans ce navigateur uniquement (<code>localStorage</code>, clé <code>ec:review</code>)&nbsp;;
+        elle n’est ni partagée ni sauvegardée ailleurs. Un autre navigateur, un autre profil ou une navigation privée repartent d’une revue vide.
+      </p>
+      <p id="storage-state"></p>
+    </footer>
+  </main>
+</div>
+
+<div class="dropzone" id="dropzone" hidden>Déposez ici <code>quotes.candidates.jsonl</code> ou <code>quotes.jsonl</code></div>
+<div class="toasts" id="toasts" aria-live="polite" aria-atomic="false"></div>
+
+<script type="module">
+// Local curation page for data/quotes.candidates.jsonl: load, review, export.
+// No framework, no build, no network call other than the two optional fetches
+// of the sibling data files when the folder is served over http.
+
+// ---------------------------------------------------------------------------
+// Schema constraints.
+// The constants below MIRROR data/quotes.schema.json (JSON Schema 2020-12) and
+// must be kept in sync with it by hand: the schema is deliberately not fetched
+// at runtime so that this page stays usable from the file system (file://).
+// Any change to data/quotes.schema.json has to be repeated here.
+// ---------------------------------------------------------------------------
+const SCHEMA = Object.freeze({
+  required: ['id', 'author', 'date', 'text', 'lang', 'medium', 'source_url', 'verified', 'added'],
+  // Declaration order of "properties" in the schema = canonical order of the exported lines.
+  order: ['id', 'author', 'date', 'text', 'lang', 'text_fr', 'translation', 'medium',
+          'context', 'source_url', 'source_type', 'verified', 'added', 'tags'],
+  idPattern: /^(trump|musk|exemple)-[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{3}$/,
+  urlPattern: /^https?:\/\//,
+  datePattern: /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/,
+  author: ['trump', 'musk'],
+  lang: ['en', 'fr'],
+  translation: ['machine', 'human'],
+  medium: ['twitter', 'x', 'truth_social', 'speech', 'interview', 'press_conference',
+           'earnings_call', 'hearing', 'book', 'other'],
+  sourceType: ['primary', 'archive', 'press'],
+  textMin: 10,
+  textMax: 1000,
+  textFrMax: 1200,
+  contextMax: 200,
+  tagsMax: 8,
+  dependentRequired: { text_fr: ['translation'] },
+});
+// additionalProperties: false -> only the keys of SCHEMA.order are accepted.
+const ALLOWED = new Set(SCHEMA.order);
+
+const AUTHOR_FR = { trump: 'Donald Trump', musk: 'Elon Musk' };
+const MEDIUM_FR = {
+  twitter: 'Twitter', x: 'X', truth_social: 'Truth Social', speech: 'discours',
+  interview: 'entretien', press_conference: 'conférence de presse',
+  earnings_call: 'présentation de résultats', hearing: 'audition', book: 'livre', other: 'autre',
+};
+const SOURCE_TYPE_FR = { primary: 'source primaire', archive: 'archive', press: 'presse' };
+const MONTHS_FR = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet',
+                   'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+const STORAGE_KEY = 'ec:review';
+const THEME_KEY = 'ec:review:theme';
+const MAX_MISSING_SHOWN = 40;
+
+// ---------------------------------------------------------------------------
+// Small helpers
+// ---------------------------------------------------------------------------
+const $ = (sel) => document.querySelector(sel);
+const pad2 = (n) => String(n).padStart(2, '0');
+
+function el(tag, attrs, children) {
+  const node = document.createElement(tag);
+  if (attrs) {
+    for (const [key, value] of Object.entries(attrs)) {
+      if (value === null || value === undefined || value === false) continue;
+      if (key === 'class') node.className = value;
+      else if (key === 'text') node.textContent = value;
+      else if (value === true) node.setAttribute(key, '');
+      else node.setAttribute(key, String(value));
+    }
+  }
+  if (children) {
+    for (const child of [].concat(children)) {
+      if (child === null || child === undefined || child === false) continue;
+      node.appendChild(typeof child === 'string' ? document.createTextNode(child) : child);
+    }
+  }
+  return node;
+}
+
+/** Scroll helper: scrollIntoView is missing from a few embedded browsers. */
+function scrollIntoView(node, options) {
+  if (node && typeof node.scrollIntoView === 'function') node.scrollIntoView(options);
+}
+
+const isLeap = (y) => (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0;
+
+/** 366 MM-DD keys in leap-year order ('02-29' at index 59), as in assets/js/dates.js. */
+function buildKeys() {
+  const lengths = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  const keys = [];
+  for (let m = 1; m <= 12; m++) {
+    for (let d = 1; d <= lengths[m - 1]; d++) keys.push(pad2(m) + '-' + pad2(d));
+  }
+  return keys;
+}
+const KEYS = buildKeys();
+const KEY_INDEX = new Map(KEYS.map((key, i) => [key, i]));
+
+function todayISO() {
+  const now = new Date();
+  return now.getFullYear() + '-' + pad2(now.getMonth() + 1) + '-' + pad2(now.getDate());
+}
+
+/** Number of Unicode code points, as counted by JSON Schema minLength/maxLength. */
+const cpLength = (value) => Array.from(String(value)).length;
+
+function isCalendarDate(value) {
+  if (typeof value !== 'string' || !SCHEMA.datePattern.test(value)) return false;
+  const year = Number(value.slice(0, 4));
+  const month = Number(value.slice(5, 7));
+  const day = Number(value.slice(8, 10));
+  if (month < 1 || month > 12 || day < 1) return false;
+  const lengths = [31, isLeap(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  return day <= lengths[month - 1];
+}
+
+function frenchDate(iso) {
+  if (!isCalendarDate(iso)) return String(iso);
+  const day = Number(iso.slice(8, 10));
+  return day + (day === 1 ? 'er ' : ' ') + MONTHS_FR[Number(iso.slice(5, 7)) - 1] + ' ' + iso.slice(0, 4);
+}
+
+/** FNV-1a 32-bit hash, used to compare texts compactly (same helper as assets/js/quotes.js). */
+function fnv1a32(str) {
+  let hash = 0x811c9dc5;
+  for (let i = 0; i < str.length; i++) {
+    hash ^= str.charCodeAt(i);
+    hash = Math.imul(hash, 0x01000193) >>> 0;
+  }
+  return hash >>> 0;
+}
+const textHash = (value) => fnv1a32(String(value).replace(/\s+/g, ' ').trim().toLowerCase()).toString(16);
+
+// ---------------------------------------------------------------------------
+// JSONL parsing: blank lines and lines starting with '#' are ignored, broken
+// lines are reported with their line number and never stop the rest.
+// ---------------------------------------------------------------------------
+function parseJSONL(text) {
+  const entries = [];
+  const errors = [];
+  String(text).split(/\r?\n/).forEach((raw, i) => {
+    const line = raw.trim();
+    if (!line || line.startsWith('#')) return;
+    let parsed = null;
+    try {
+      parsed = JSON.parse(line);
+    } catch (err) {
+      errors.push({ line: i + 1, message: 'JSON illisible (' + err.message + ')' });
+      return;
+    }
+    if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) entries.push(parsed);
+    else errors.push({ line: i + 1, message: 'objet JSON attendu' });
+  });
+  return { entries, errors };
+}
+
+// ---------------------------------------------------------------------------
+// Validation (mirrors data/quotes.schema.json, see SCHEMA above)
+// ---------------------------------------------------------------------------
+function validateEntry(entry) {
+  const errors = [];
+  if (!entry || typeof entry !== 'object' || Array.isArray(entry)) return ['objet JSON attendu'];
+
+  for (const key of SCHEMA.required) {
+    if (!(key in entry)) errors.push('champ obligatoire absent : « ' + key + ' »');
+  }
+  for (const key of Object.keys(entry)) {
+    if (!ALLOWED.has(key)) errors.push('champ non autorisé : « ' + key + ' » (le schéma refuse tout champ supplémentaire)');
+  }
+
+  if ('id' in entry && (typeof entry.id !== 'string' || !SCHEMA.idPattern.test(entry.id))) {
+    errors.push('id : format attendu « trump|musk|exemple-AAAA-MM-JJ-NNN », par exemple trump-2021-01-06-001');
+  }
+  if ('author' in entry && !SCHEMA.author.includes(entry.author)) {
+    errors.push('author : valeur attendue parmi ' + SCHEMA.author.join(', '));
+  }
+  if ('date' in entry && !isCalendarDate(entry.date)) {
+    errors.push('date : date réelle au format AAAA-MM-JJ attendue');
+  }
+  if ('text' in entry) {
+    if (typeof entry.text !== 'string') {
+      errors.push('text : chaîne attendue');
+    } else {
+      const size = cpLength(entry.text);
+      if (size < SCHEMA.textMin) errors.push('text : ' + SCHEMA.textMin + ' caractères minimum (actuellement ' + size + ')');
+      if (size > SCHEMA.textMax) errors.push('text : ' + SCHEMA.textMax + ' caractères maximum (actuellement ' + size + ')');
+    }
+  }
+  if ('lang' in entry && !SCHEMA.lang.includes(entry.lang)) {
+    errors.push('lang : valeur attendue parmi ' + SCHEMA.lang.join(', '));
+  }
+  if ('text_fr' in entry) {
+    if (typeof entry.text_fr !== 'string') {
+      errors.push('text_fr : chaîne attendue');
+    } else if (cpLength(entry.text_fr) > SCHEMA.textFrMax) {
+      errors.push('text_fr : ' + SCHEMA.textFrMax + ' caractères maximum (actuellement ' + cpLength(entry.text_fr) + ')');
+    }
+  }
+  if ('translation' in entry && !SCHEMA.translation.includes(entry.translation)) {
+    errors.push('translation : valeur attendue parmi ' + SCHEMA.translation.join(', '));
+  }
+  if ('medium' in entry && !SCHEMA.medium.includes(entry.medium)) {
+    errors.push('medium : valeur attendue parmi ' + SCHEMA.medium.join(', '));
+  }
+  if ('context' in entry) {
+    if (typeof entry.context !== 'string') {
+      errors.push('context : chaîne attendue');
+    } else if (cpLength(entry.context) > SCHEMA.contextMax) {
+      errors.push('context : ' + SCHEMA.contextMax + ' caractères maximum (actuellement ' + cpLength(entry.context) + ')');
+    }
+  }
+  if ('source_url' in entry && (typeof entry.source_url !== 'string' || !SCHEMA.urlPattern.test(entry.source_url))) {
+    errors.push('source_url : adresse commençant par http:// ou https:// attendue');
+  }
+  if ('source_type' in entry && !SCHEMA.sourceType.includes(entry.source_type)) {
+    errors.push('source_type : valeur attendue parmi ' + SCHEMA.sourceType.join(', '));
+  }
+  if ('verified' in entry && typeof entry.verified !== 'boolean') {
+    errors.push('verified : booléen attendu');
+  }
+  if ('added' in entry && !isCalendarDate(entry.added)) {
+    errors.push('added : date réelle au format AAAA-MM-JJ attendue');
+  }
+  if ('tags' in entry) {
+    if (!Array.isArray(entry.tags)) {
+      errors.push('tags : tableau de chaînes attendu');
+    } else {
+      if (entry.tags.length > SCHEMA.tagsMax) errors.push('tags : ' + SCHEMA.tagsMax + ' étiquettes maximum (actuellement ' + entry.tags.length + ')');
+      if (entry.tags.some((tag) => typeof tag !== 'string')) errors.push('tags : chaque étiquette doit être une chaîne');
+    }
+  }
+  for (const [key, needed] of Object.entries(SCHEMA.dependentRequired)) {
+    if (key in entry) {
+      for (const dep of needed) {
+        if (!(dep in entry)) errors.push(dep + ' : obligatoire dès que ' + key + ' est renseigné');
+      }
+    }
+  }
+  return errors;
+}
+
+// ---------------------------------------------------------------------------
+// State
+// ---------------------------------------------------------------------------
+const state = {
+  cands: [],              // { uid, index, raw, key, dup }
+  byUid: new Map(),
+  dayUids: new Map(),     // MM-DD -> [uid]
+  days: [],               // MM-DD present, in calendar order
+  review: Object.create(null), // uid -> { status, context, text_fr, translation, text }
+  base: { loaded: false, count: 0, ids: new Set(), hashes: new Set(), days: new Set(), name: '' },
+  candFileName: '',
+  filters: { status: 'all', author: 'all', hideDup: false },
+  visible: [],            // uids currently displayed, in order
+  current: -1,            // index in state.visible
+  storageOk: true,
+};
+
+const dayNodes = new Map();   // MM-DD -> <section>
+const cardNodes = new Map();  // uid -> <article>
+const dayButtons = new Map(); // MM-DD -> <button>
+const TODAY = todayISO();
+
+function reviewOf(uid) {
+  let item = state.review[uid];
+  if (!item) {
+    const cand = state.byUid.get(uid);
+    const raw = cand ? cand.raw : {};
+    item = {
+      status: 'pending',
+      context: typeof raw.context === 'string' ? raw.context : '',
+      text_fr: typeof raw.text_fr === 'string' ? raw.text_fr : '',
+      translation: SCHEMA.translation.includes(raw.translation) ? raw.translation : '',
+      text: null,
+      unlocked: false,
+    };
+    state.review[uid] = item;
+  }
+  return item;
+}
+
+const candText = (cand) => {
+  const item = state.review[cand.uid];
+  return item && typeof item.text === 'string' ? item.text : (typeof cand.raw.text === 'string' ? cand.raw.text : '');
+};
+
+// ---------------------------------------------------------------------------
+// Persistence (localStorage, always guarded)
+// ---------------------------------------------------------------------------
+function saveReview() {
+  if (!state.storageOk) return;
+  const payload = {
+    v: 1,
+    saved_at: new Date().toISOString(),
+    cand_file: state.candFileName,
+    review: state.review,
+    filters: state.filters,
+    base: {
+      loaded: state.base.loaded,
+      count: state.base.count,
+      name: state.base.name,
+      ids: Array.from(state.base.ids),
+      hashes: Array.from(state.base.hashes),
+      days: Array.from(state.base.days),
+    },
+    candidates: state.cands.map((cand) => cand.raw),
+  };
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+    setStorageState('Revue enregistrée localement le ' + new Date().toLocaleString('fr-FR') + '.');
+  } catch (err) {
+    // Most likely the quota: keep the decisions, drop the copy of the candidates.
+    try {
+      payload.candidates = [];
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+      setStorageState('Revue enregistrée sans la copie des candidats (espace insuffisant) : rechargez le fichier après un rechargement de la page.');
+    } catch (err2) {
+      state.storageOk = false;
+      setStorageState('Enregistrement local indisponible dans ce navigateur : la revue sera perdue au rechargement.');
+    }
+  }
+}
+
+function loadStored() {
+  let payload = null;
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+    payload = JSON.parse(raw);
+  } catch (err) {
+    state.storageOk = false;
+    return null;
+  }
+  if (!payload || typeof payload !== 'object' || payload.v !== 1) return null;
+  return payload;
+}
+
+function clearStored() {
+  try {
+    localStorage.removeItem(STORAGE_KEY);
+  } catch (err) {
+    /* nothing else to do: the review simply is not persisted */
+  }
+}
+
+function setStorageState(message) {
+  const node = $('#storage-state');
+  if (node) node.textContent = message;
+}
+
+// ---------------------------------------------------------------------------
+// Ingestion
+// ---------------------------------------------------------------------------
+function ingestCandidates(entries, fileName, keepReview) {
+  if (!keepReview) state.review = Object.create(null);
+  state.candFileName = fileName || '';
+  state.cands = [];
+  state.byUid = new Map();
+  state.dayUids = new Map();
+
+  const seenIds = new Set();
+  const seenHashes = new Set();
+
+  entries.forEach((raw, index) => {
+    let uid = typeof raw.id === 'string' && raw.id ? raw.id : 'sans-id-' + (index + 1);
+    if (state.byUid.has(uid)) uid = uid + '#' + (index + 1);
+    const date = typeof raw.date === 'string' ? raw.date : '';
+    const key = SCHEMA.datePattern.test(date) ? date.slice(5, 10) : '';
+    const hash = typeof raw.text === 'string' ? textHash(raw.text) : '';
+
+    let dup = null;
+    if (typeof raw.id === 'string' && state.base.ids.has(raw.id)) dup = 'identifiant déjà présent dans data/quotes.jsonl';
+    else if (hash && state.base.hashes.has(hash)) dup = 'texte déjà présent dans data/quotes.jsonl';
+    else if (typeof raw.id === 'string' && seenIds.has(raw.id)) dup = 'identifiant déjà utilisé plus haut dans ce fichier';
+    else if (hash && seenHashes.has(hash)) dup = 'texte déjà présent plus haut dans ce fichier';
+    if (typeof raw.id === 'string') seenIds.add(raw.id);
+    if (hash) seenHashes.add(hash);
+
+    const cand = { uid, index, raw, key, hash, dup };
+    state.cands.push(cand);
+    state.byUid.set(uid, cand);
+    if (key) {
+      if (!state.dayUids.has(key)) state.dayUids.set(key, []);
+      state.dayUids.get(key).push(uid);
+    }
+  });
+
+  // Entries without a usable date are grouped under a dedicated key shown last.
+  const undated = state.cands.filter((cand) => !cand.key);
+  if (undated.length) state.dayUids.set('??-??', undated.map((cand) => cand.uid));
+
+  state.days = Array.from(state.dayUids.keys()).sort((a, b) => {
+    const rankA = KEY_INDEX.has(a) ? KEY_INDEX.get(a) : 999;
+    const rankB = KEY_INDEX.has(b) ? KEY_INDEX.get(b) : 999;
+    return rankA - rankB;
+  });
+
+  // Drop stored decisions that no longer match a loaded candidate.
+  if (keepReview) {
+    for (const uid of Object.keys(state.review)) {
+      if (!state.byUid.has(uid)) delete state.review[uid];
+    }
+  }
+}
+
+function recomputeDuplicates() {
+  const seenIds = new Set();
+  const seenHashes = new Set();
+  for (const cand of state.cands) {
+    const id = typeof cand.raw.id === 'string' ? cand.raw.id : '';
+    let dup = null;
+    if (id && state.base.ids.has(id)) dup = 'identifiant déjà présent dans data/quotes.jsonl';
+    else if (cand.hash && state.base.hashes.has(cand.hash)) dup = 'texte déjà présent dans data/quotes.jsonl';
+    else if (id && seenIds.has(id)) dup = 'identifiant déjà utilisé plus haut dans ce fichier';
+    else if (cand.hash && seenHashes.has(cand.hash)) dup = 'texte déjà présent plus haut dans ce fichier';
+    if (id) seenIds.add(id);
+    if (cand.hash) seenHashes.add(cand.hash);
+    cand.dup = dup;
+  }
+}
+
+function ingestBase(entries, fileName) {
+  state.base = { loaded: true, count: entries.length, ids: new Set(), hashes: new Set(), days: new Set(), name: fileName || '' };
+  for (const entry of entries) {
+    if (typeof entry.id === 'string') state.base.ids.add(entry.id);
+    if (typeof entry.text === 'string') state.base.hashes.add(textHash(entry.text));
+    if (entry.verified === true && typeof entry.date === 'string' && SCHEMA.datePattern.test(entry.date)) {
+      state.base.days.add(entry.date.slice(5, 10));
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Export
+// ---------------------------------------------------------------------------
+function buildExportEntry(cand) {
+  const raw = cand.raw;
+  const item = reviewOf(cand.uid);
+  const out = {};
+  // Canonical order = declaration order of the schema properties.
+  if ('id' in raw) out.id = raw.id;
+  if ('author' in raw) out.author = raw.author;
+  if ('date' in raw) out.date = raw.date;
+  out.text = candText(cand);
+  if ('lang' in raw) out.lang = raw.lang;
+  const textFr = (item.text_fr || '').trim();
+  if (textFr) {
+    out.text_fr = textFr;
+    if (item.translation) out.translation = item.translation;
+  }
+  if ('medium' in raw) out.medium = raw.medium;
+  const context = (item.context || '').trim();
+  if (context) out.context = context;
+  if ('source_url' in raw) out.source_url = raw.source_url;
+  if (typeof raw.source_type === 'string' && raw.source_type) out.source_type = raw.source_type;
+  out.verified = true;
+  out.added = TODAY;
+  if (Array.isArray(raw.tags)) {
+    const tags = raw.tags.filter((tag) => typeof tag === 'string' && tag.trim() !== '');
+    if (tags.length) out.tags = tags;
+  }
+  return out;
+}
+
+function candErrors(cand) {
+  return validateEntry(buildExportEntry(cand));
+}
+
+function candNotes(cand) {
+  const notes = [];
+  const unknown = Object.keys(cand.raw).filter((key) => !ALLOWED.has(key));
+  if (unknown.length) notes.push('champ(s) hors schéma dans le candidat, ignoré(s) à l’export : ' + unknown.join(', '));
+  if (cand.raw.verified === true) notes.push('le fichier marque déjà cette entrée « verified » : la revue demande tout de même un clic explicite.');
+  if (typeof cand.raw.source_url === 'string' && /^http:\/\//.test(cand.raw.source_url)) {
+    notes.push('source en http:// : une adresse https:// est attendue pour les entrées publiées.');
+  }
+  if (typeof cand.raw.date === 'string' && isCalendarDate(cand.raw.date) && cand.raw.date > TODAY) {
+    notes.push('date postérieure à aujourd’hui : à vérifier (la validation du dépôt la refuse).');
+  }
+  return notes;
+}
+
+const isExportable = (cand) => reviewOf(cand.uid).status === 'verified' && !cand.dup && candErrors(cand).length === 0;
+
+function exportLines() {
+  const lines = [];
+  for (const cand of state.cands) {
+    if (isExportable(cand)) lines.push(JSON.stringify(buildExportEntry(cand)));
+  }
+  return lines;
+}
+
+// ---------------------------------------------------------------------------
+// Rendering: day navigation
+// ---------------------------------------------------------------------------
+function renderDaysNav() {
+  const list = $('#days-list');
+  list.textContent = '';
+  dayButtons.clear();
+  for (const key of state.days) {
+    const btn = el('button', { type: 'button', class: 'day-btn', 'data-key': key }, [
+      el('span', { class: 'k', text: key }),
+      el('span', { class: 'n', text: String(state.dayUids.get(key).length) }),
+      el('span', { class: 'v', text: '0' }),
+    ]);
+    btn.addEventListener('click', () => goToDay(key));
+    dayButtons.set(key, btn);
+    list.appendChild(el('li', null, btn));
+  }
+  $('#days-summary').textContent = state.days.length
+    ? state.days.length + ' jour(s) avec au moins un candidat'
+    : 'Aucun jour chargé.';
+}
+
+function verifiedCountOfDay(key) {
+  let count = 0;
+  for (const uid of state.dayUids.get(key) || []) {
+    if (reviewOf(uid).status === 'verified') count++;
+  }
+  return count;
+}
+
+function goToDay(key) {
+  const section = ensureDay(key);
+  if (!section) return;
+  scrollIntoView(section, { behavior: 'smooth', block: 'start' });
+  const uids = state.dayUids.get(key) || [];
+  const index = state.visible.findIndex((uid) => uids.includes(uid));
+  if (index >= 0) setCurrent(index, false);
+}
+
+// ---------------------------------------------------------------------------
+// Rendering: day sections and cards
+// ---------------------------------------------------------------------------
+let observer = null;
+
+function renderDays() {
+  const container = $('#days-container');
+  container.textContent = '';
+  dayNodes.clear();
+  cardNodes.clear();
+  if (observer) { observer.disconnect(); observer = null; }
+
+  if (typeof IntersectionObserver === 'function') {
+    observer = new IntersectionObserver((records) => {
+      for (const record of records) {
+        if (record.isIntersecting) ensureDay(record.target.dataset.key);
+      }
+    }, { rootMargin: '900px 0px' });
+  }
+
+  for (const key of state.days) {
+    const uids = state.dayUids.get(key);
+    const title = key === '??-??' ? 'Sans date exploitable' : key + ' — ' + dayLabel(key);
+    const body = el('div', { class: 'day-body', 'data-key': key });
+    body.style.minHeight = Math.min(uids.length, 6) * 170 + 'px';
+    const section = el('section', { class: 'day-section', id: 'jour-' + key.replace(/[^0-9?-]/g, ''), 'data-key': key }, [
+      el('div', { class: 'day-head' }, [
+        el('h2', { text: title }),
+        el('span', { class: 'muted small', text: uids.length + ' candidat(s)' }),
+      ]),
+      body,
+    ]);
+    body.appendChild(el('p', { class: 'muted small placeholder', text: 'Candidats affichés à l’approche…' }));
+    dayNodes.set(key, section);
+    container.appendChild(section);
+    if (observer) observer.observe(body);
+  }
+
+  if (!observer) for (const key of state.days) ensureDay(key);
+  $('#empty-state').hidden = state.days.length > 0;
+}
+
+function dayLabel(key) {
+  const month = Number(key.slice(0, 2));
+  const day = Number(key.slice(3, 5));
+  if (!month || !day) return '';
+  return day + (day === 1 ? 'er ' : ' ') + MONTHS_FR[month - 1];
+}
+
+function ensureDay(key) {
+  const section = dayNodes.get(key);
+  if (!section) return null;
+  if (section.dataset.rendered === '1') return section;
+  section.dataset.rendered = '1';
+  const body = section.querySelector('.day-body');
+  body.textContent = '';
+  body.style.minHeight = '';
+  const fragment = document.createDocumentFragment();
+  for (const uid of state.dayUids.get(key) || []) fragment.appendChild(buildCard(uid));
+  body.appendChild(fragment);
+  applyFiltersToDay(key);
+  return section;
+}
+
+function buildCard(uid) {
+  const cand = state.byUid.get(uid);
+  const raw = cand.raw;
+  const item = reviewOf(uid);
+  const safe = 'c' + cand.index;
+
+  const card = el('article', {
+    class: 'card cand', tabindex: '0', 'data-uid': uid,
+    'aria-label': 'Candidat ' + (typeof raw.id === 'string' ? raw.id : uid),
+  });
+  card.addEventListener('focus', () => {
+    const index = state.visible.indexOf(uid);
+    if (index >= 0 && index !== state.current) setCurrent(index, false);
+  });
+
+  const head = el('div', { class: 'cand-head' }, [
+    el('h3', { text: (AUTHOR_FR[raw.author] || String(raw.author)) + ' — ' + frenchDate(raw.date) }),
+    el('span', { class: 'chip', text: MEDIUM_FR[raw.medium] || String(raw.medium) }),
+    raw.lang ? el('span', { class: 'chip', text: 'langue : ' + raw.lang }) : null,
+    raw.source_type ? el('span', { class: 'chip', text: SOURCE_TYPE_FR[raw.source_type] || String(raw.source_type) }) : null,
+    el('code', { class: 'cand-id', text: typeof raw.id === 'string' ? raw.id : '(identifiant absent)' }),
+    el('span', { class: 'chip status-chip' }),
+  ]);
+  card.appendChild(head);
+
+  const textBox = el('pre', { class: 'src-text', 'data-role': 'text' });
+  textBox.textContent = candText(cand);
+  card.appendChild(textBox);
+
+  const url = typeof raw.source_url === 'string' ? raw.source_url : '';
+  const linkRow = el('p', { class: 'cand-links' }, [
+    url && SCHEMA.urlPattern.test(url)
+      ? el('a', { class: 'btn', href: url, target: '_blank', rel: 'noopener noreferrer', 'data-role': 'source' }, 'Ouvrir la source ↗')
+      : el('span', { class: 'error small', text: 'source_url absent ou invalide : impossible de vérifier cette citation' }),
+    el('span', { class: 'muted small', text: url }),
+  ]);
+  card.appendChild(linkRow);
+
+  if (Array.isArray(raw.tags) && raw.tags.length) {
+    card.appendChild(el('p', { class: 'cand-tags' }, raw.tags.map((tag) => el('span', { class: 'chip', text: String(tag) }))));
+  }
+
+  // Editable fields
+  const fields = el('div', { class: 'fields' });
+
+  const ctxInput = el('input', { type: 'text', id: 'ctx-' + safe, maxlength: String(SCHEMA.contextMax), spellcheck: 'true' });
+  ctxInput.value = item.context || '';
+  const ctxCounter = el('p', { class: 'counter', 'data-role': 'ctx-count' });
+  fields.appendChild(el('div', { class: 'field field-wide' }, [
+    el('label', { for: 'ctx-' + safe, text: 'Contexte factuel, une ligne (facultatif, ' + SCHEMA.contextMax + ' caractères)' }),
+    ctxInput, ctxCounter,
+  ]));
+
+  const frInput = el('textarea', { id: 'fr-' + safe, rows: '3', maxlength: String(SCHEMA.textFrMax), spellcheck: 'true' });
+  frInput.value = item.text_fr || '';
+  const frCounter = el('p', { class: 'counter', 'data-role': 'fr-count' });
+  fields.appendChild(el('div', { class: 'field' }, [
+    el('label', { for: 'fr-' + safe, text: 'Traduction française (facultative, ' + SCHEMA.textFrMax + ' caractères)' }),
+    frInput, frCounter,
+  ]));
+
+  const trSelect = el('select', { id: 'tr-' + safe, 'data-role': 'translation' }, [
+    el('option', { value: '', text: '— choisir —' }),
+    el('option', { value: 'machine', text: 'traduction automatique' }),
+    el('option', { value: 'human', text: 'traduction humaine' }),
+  ]);
+  trSelect.value = item.translation || '';
+  fields.appendChild(el('div', { class: 'field' }, [
+    el('label', { for: 'tr-' + safe, text: 'Origine de la traduction (obligatoire si traduction renseignée)' }),
+    trSelect,
+    el('p', { class: 'counter', 'data-role': 'tr-hint' }),
+  ]));
+
+  const unlock = el('input', { type: 'checkbox', id: 'unlock-' + safe, 'data-role': 'unlock' });
+  unlock.checked = Boolean(item.unlocked);
+  fields.appendChild(el('div', { class: 'field field-wide check' }, [
+    unlock,
+    el('label', { for: 'unlock-' + safe, text: 'Corriger le texte (verrouillé par défaut : text doit rester la copie exacte de la source)' }),
+  ]));
+
+  card.appendChild(fields);
+  card.appendChild(el('p', { class: 'unlock-warn', 'data-role': 'unlock-warn', hidden: true },
+    'Texte déverrouillé : il doit rester identique au caractère près à ce qu’affiche la source. Ne corrigez que ce qui a été abîmé à l’extraction.'));
+  card.appendChild(el('ul', { class: 'notes', 'data-role': 'notes' }));
+  card.appendChild(el('ul', { class: 'errors', 'data-role': 'errors' }));
+
+  const okBtn = el('button', { type: 'button', class: 'btn btn-ok', 'data-role': 'verify' }, 'Vérifié');
+  const noBtn = el('button', { type: 'button', class: 'btn btn-no', 'data-role': 'reject' }, 'Rejeter');
+  const undoBtn = el('button', { type: 'button', class: 'btn', 'data-role': 'undo' }, 'Annuler');
+  card.appendChild(el('p', { class: 'actions' }, [okBtn, noBtn, undoBtn]));
+
+  okBtn.addEventListener('click', () => setStatus(uid, reviewOf(uid).status === 'verified' ? 'pending' : 'verified'));
+  noBtn.addEventListener('click', () => setStatus(uid, reviewOf(uid).status === 'rejected' ? 'pending' : 'rejected'));
+  undoBtn.addEventListener('click', () => setStatus(uid, 'pending'));
+
+  ctxInput.addEventListener('input', () => {
+    reviewOf(uid).context = ctxInput.value;
+    refreshCardLive(uid);
+    scheduleSave();
+  });
+  frInput.addEventListener('input', () => {
+    reviewOf(uid).text_fr = frInput.value;
+    refreshCardLive(uid);
+    scheduleSave();
+  });
+  trSelect.addEventListener('change', () => {
+    reviewOf(uid).translation = trSelect.value;
+    refreshCardLive(uid);
+    scheduleSave();
+  });
+  unlock.addEventListener('change', () => {
+    reviewOf(uid).unlocked = unlock.checked;
+    swapTextField(uid, unlock.checked);
+    refreshCardLive(uid);
+    scheduleSave();
+  });
+
+  cardNodes.set(uid, card);
+  if (item.unlocked) swapTextField(uid, true, card);
+  refreshCardLive(uid, card);
+  refreshCardStatus(uid, card);
+  return card;
+}
+
+function swapTextField(uid, unlocked, cardArg) {
+  const card = cardArg || cardNodes.get(uid);
+  if (!card) return;
+  const cand = state.byUid.get(uid);
+  const current = card.querySelector('[data-role="text"]');
+  if (!current) return;
+  const value = candText(cand);
+  if (unlocked && current.tagName !== 'TEXTAREA') {
+    const area = el('textarea', {
+      class: 'src-text', 'data-role': 'text', spellcheck: 'false',
+      rows: String(Math.min(20, Math.max(3, value.split('\n').length + 1))),
+      'aria-label': 'Texte exact de la citation',
+    });
+    area.value = value;
+    area.addEventListener('input', () => {
+      reviewOf(uid).text = area.value;
+      refreshCardLive(uid);
+      scheduleSave();
+    });
+    current.replaceWith(area);
+  } else if (!unlocked && current.tagName === 'TEXTAREA') {
+    const box = el('pre', { class: 'src-text', 'data-role': 'text' });
+    box.textContent = value;
+    current.replaceWith(box);
+  }
+  const warn = card.querySelector('[data-role="unlock-warn"]');
+  if (warn) warn.hidden = !unlocked;
+}
+
+/** Live parts of a card: counters, validation errors, notes. */
+function refreshCardLive(uid, cardArg) {
+  const card = cardArg || cardNodes.get(uid);
+  if (!card) return;
+  const cand = state.byUid.get(uid);
+  const item = reviewOf(uid);
+
+  const ctxCount = card.querySelector('[data-role="ctx-count"]');
+  if (ctxCount) {
+    const size = cpLength(item.context || '');
+    ctxCount.textContent = size + ' / ' + SCHEMA.contextMax;
+    ctxCount.classList.toggle('is-over', size > SCHEMA.contextMax);
+  }
+  const frCount = card.querySelector('[data-role="fr-count"]');
+  if (frCount) {
+    const size = cpLength(item.text_fr || '');
+    frCount.textContent = size + ' / ' + SCHEMA.textFrMax;
+    frCount.classList.toggle('is-over', size > SCHEMA.textFrMax);
+  }
+  const trHint = card.querySelector('[data-role="tr-hint"]');
+  if (trHint) {
+    const needed = Boolean((item.text_fr || '').trim());
+    trHint.textContent = needed ? (item.translation ? '' : 'obligatoire') : 'sans objet';
+    trHint.classList.toggle('is-over', needed && !item.translation);
+  }
+
+  const notesList = card.querySelector('[data-role="notes"]');
+  if (notesList) {
+    notesList.textContent = '';
+    const notes = candNotes(cand);
+    if (cand.dup) notes.unshift('doublon : ' + cand.dup + ' — cette entrée ne sera pas exportée.');
+    if (typeof item.text === 'string' && item.text !== cand.raw.text) notes.push('texte corrigé par rapport au fichier de candidats.');
+    for (const note of notes) notesList.appendChild(el('li', { text: note }));
+  }
+
+  const errorsList = card.querySelector('[data-role="errors"]');
+  if (errorsList) {
+    errorsList.textContent = '';
+    for (const message of candErrors(cand)) errorsList.appendChild(el('li', { text: message }));
+  }
+  scheduleCounters();
+}
+
+/** Status-dependent parts of a card. */
+function refreshCardStatus(uid, cardArg) {
+  const card = cardArg || cardNodes.get(uid);
+  if (!card) return;
+  const cand = state.byUid.get(uid);
+  const item = reviewOf(uid);
+  card.classList.toggle('is-verified', item.status === 'verified');
+  card.classList.toggle('is-rejected', item.status === 'rejected');
+  card.classList.toggle('is-dup', Boolean(cand.dup));
+
+  const chip = card.querySelector('.status-chip');
+  if (chip) {
+    chip.textContent = item.status === 'verified' ? 'vérifiée'
+      : item.status === 'rejected' ? 'rejetée' : 'à traiter';
+    chip.classList.toggle('chip-ok', item.status === 'verified');
+    chip.classList.toggle('chip-warm', item.status === 'rejected');
+  }
+  const okBtn = card.querySelector('[data-role="verify"]');
+  const noBtn = card.querySelector('[data-role="reject"]');
+  const undoBtn = card.querySelector('[data-role="undo"]');
+  if (okBtn) okBtn.classList.toggle('is-on', item.status === 'verified');
+  if (noBtn) noBtn.classList.toggle('is-on', item.status === 'rejected');
+  if (undoBtn) undoBtn.hidden = item.status === 'pending';
+}
+
+function setStatus(uid, status) {
+  reviewOf(uid).status = status;
+  refreshCardStatus(uid);
+  refreshCardLive(uid);
+  updateDayButton(state.byUid.get(uid).key || '??-??');
+  // Visibility only depends on the status when the status filter is active.
+  if (state.filters.status !== 'all') applyFilters(true);
+  scheduleSave();
+}
+
+function updateDayButton(key) {
+  const btn = dayButtons.get(key);
+  if (!btn) return;
+  const verified = verifiedCountOfDay(key);
+  btn.querySelector('.v').textContent = verified ? verified + ' ✓' : '0';
+  btn.classList.toggle('is-done', verified > 0);
+  const section = dayNodes.get(key);
+  if (section) section.classList.toggle('is-done', verified > 0);
+}
+
+// ---------------------------------------------------------------------------
+// Filters and keyboard navigation
+// ---------------------------------------------------------------------------
+function matchesFilters(cand) {
+  const item = reviewOf(cand.uid);
+  const filters = state.filters;
+  if (filters.status !== 'all' && item.status !== filters.status) return false;
+  if (filters.author !== 'all' && cand.raw.author !== filters.author) return false;
+  if (filters.hideDup && cand.dup) return false;
+  return true;
+}
+
+function applyFilters(keepCurrent) {
+  const previous = state.current >= 0 ? state.visible[state.current] : null;
+  state.visible = state.cands.filter(matchesFilters).map((cand) => cand.uid);
+  for (const key of state.days) applyFiltersToDay(key);
+  $('#filter-count').textContent = state.visible.length + ' candidat(s) affiché(s) sur ' + state.cands.length;
+  const index = keepCurrent && previous ? state.visible.indexOf(previous) : -1;
+  state.current = index;
+  for (const [uid, card] of cardNodes) card.classList.toggle('is-current', uid === previous && index >= 0);
+  scheduleCounters();
+}
+
+function applyFiltersToDay(key) {
+  const section = dayNodes.get(key);
+  if (!section) return;
+  const uids = state.dayUids.get(key) || [];
+  let shown = 0;
+  for (const uid of uids) {
+    const cand = state.byUid.get(uid);
+    const visible = matchesFilters(cand);
+    if (visible) shown++;
+    const card = cardNodes.get(uid);
+    if (card) card.hidden = !visible;
+  }
+  if (section.dataset.rendered === '1') {
+    let note = section.querySelector('.filtered-note');
+    if (!shown && !note) {
+      note = el('p', { class: 'muted small filtered-note', text: 'Tous les candidats de ce jour sont masqués par les filtres.' });
+      section.querySelector('.day-body').appendChild(note);
+    } else if (shown && note) {
+      note.remove();
+    }
+  }
+  updateDayButton(key);
+}
+
+function setCurrent(index, focusIt) {
+  if (!state.visible.length) return;
+  const bounded = Math.max(0, Math.min(state.visible.length - 1, index));
+  const uid = state.visible[bounded];
+  state.current = bounded;
+  const key = state.byUid.get(uid).key || '??-??';
+  ensureDay(key);
+  for (const [otherUid, card] of cardNodes) card.classList.toggle('is-current', otherUid === uid);
+  const card = cardNodes.get(uid);
+  if (card && focusIt !== false) {
+    card.focus({ preventScroll: true });
+    scrollIntoView(card, { block: 'nearest' });
+  }
+}
+
+function moveCurrent(delta) {
+  if (!state.visible.length) return;
+  setCurrent(state.current < 0 ? (delta > 0 ? 0 : state.visible.length - 1) : state.current + delta, true);
+}
+
+function currentUid() {
+  if (state.current < 0 || state.current >= state.visible.length) return null;
+  return state.visible[state.current];
+}
+
+function isTyping(node) {
+  if (!node) return false;
+  if (node.isContentEditable) return true;
+  return ['INPUT', 'TEXTAREA', 'SELECT'].includes(node.tagName);
+}
+
+document.addEventListener('keydown', (event) => {
+  if (event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey) return;
+  if (isTyping(event.target)) return;
+  if (!state.visible.length) return;
+  const key = event.key;
+  if (key === 'j' || key === 'ArrowDown') { moveCurrent(1); event.preventDefault(); return; }
+  if (key === 'k' || key === 'ArrowUp') { moveCurrent(-1); event.preventDefault(); return; }
+  if (key !== 'v' && key !== 'r' && key !== 'o') return;
+  if (state.current < 0) setCurrent(0, true);
+  const uid = currentUid();
+  if (!uid) return;
+  event.preventDefault();
+  if (key === 'v') {
+    setStatus(uid, reviewOf(uid).status === 'verified' ? 'pending' : 'verified');
+    toast(reviewOf(uid).status === 'verified' ? 'Marquée vérifiée.' : 'Remise à traiter.');
+  } else if (key === 'r') {
+    setStatus(uid, reviewOf(uid).status === 'rejected' ? 'pending' : 'rejected');
+    toast(reviewOf(uid).status === 'rejected' ? 'Rejetée.' : 'Remise à traiter.');
+  } else {
+    const url = state.byUid.get(uid).raw.source_url;
+    if (typeof url === 'string' && SCHEMA.urlPattern.test(url)) window.open(url, '_blank', 'noopener,noreferrer');
+    else toast('Pas de source exploitable pour ce candidat.');
+  }
+});
+
+// ---------------------------------------------------------------------------
+// Counters and export preview
+// ---------------------------------------------------------------------------
+let counterTimer = null;
+function scheduleCounters() {
+  if (counterTimer) clearTimeout(counterTimer);
+  counterTimer = setTimeout(refreshCounters, 120);
+}
+
+function refreshCounters() {
+  counterTimer = null;
+  let verified = 0;
+  let rejected = 0;
+  let dup = 0;
+  const coveredDays = new Set(state.base.days);
+  const reviewDays = new Set();
+  for (const cand of state.cands) {
+    const item = reviewOf(cand.uid);
+    if (item.status === 'verified') {
+      verified++;
+      if (cand.key) { coveredDays.add(cand.key); reviewDays.add(cand.key); }
+    }
+    if (item.status === 'rejected') rejected++;
+    if (cand.dup) dup++;
+  }
+  const lines = exportLines();
+  $('#c-total').textContent = String(state.cands.length);
+  $('#c-verified').textContent = String(verified);
+  $('#c-rejected').textContent = String(rejected);
+  $('#c-dup').textContent = String(dup);
+  $('#c-days').textContent = String(KEYS.filter((key) => coveredDays.has(key)).length);
+  $('#c-export').textContent = String(lines.length);
+
+  const missing = KEYS.filter((key) => !coveredDays.has(key));
+  $('#c-missing').textContent = String(missing.length);
+  const shown = missing.slice(0, MAX_MISSING_SHOWN).join(', ');
+  $('#missing-list').textContent = missing.length
+    ? shown + (missing.length > MAX_MISSING_SHOWN ? ', …' : '')
+      + (state.base.loaded ? ' (jours couverts ni par la revue, ni par data/quotes.jsonl)' : ' (jours non couverts par la revue en cours)')
+    : 'Les 366 jours sont couverts.';
+
+  $('#export-text').value = lines.length ? lines.join('\n') + '\n' : '';
+  $('#download-btn').disabled = lines.length === 0;
+  $('#copy-btn').disabled = lines.length === 0;
+}
+
+// ---------------------------------------------------------------------------
+// Warnings, toasts
+// ---------------------------------------------------------------------------
+function showWarning(title, messages) {
+  const box = el('div', { class: 'warnbox', role: 'status' });
+  const close = el('button', { type: 'button', class: 'btn btn-small close' }, 'Fermer');
+  close.addEventListener('click', () => box.remove());
+  box.appendChild(close);
+  box.appendChild(el('h2', { text: title }));
+  const list = el('ul');
+  for (const message of messages.slice(0, 50)) list.appendChild(el('li', { text: message }));
+  box.appendChild(list);
+  if (messages.length > 50) box.appendChild(el('p', { class: 'small muted', text: '… ' + (messages.length - 50) + ' autre(s) ligne(s) non affichée(s).' }));
+  $('#warnings').appendChild(box);
+}
+
+function toast(message) {
+  const node = el('div', { class: 'toast', text: message });
+  $('#toasts').appendChild(node);
+  setTimeout(() => node.remove(), 3500);
+}
+
+let saveTimer = null;
+function scheduleSave() {
+  if (saveTimer) clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => { saveTimer = null; saveReview(); }, 500);
+}
+
+// ---------------------------------------------------------------------------
+// File loading: file input, drag and drop, optional fetch
+// ---------------------------------------------------------------------------
+function updateLoadState() {
+  const parts = [];
+  parts.push(state.cands.length
+    ? state.cands.length + ' candidat(s) chargé(s)' + (state.candFileName ? ' depuis ' + state.candFileName : '')
+    : 'Aucun candidat chargé.');
+  if (state.base.loaded) parts.push(state.base.count + ' ligne(s) de base existante' + (state.base.name ? ' (' + state.base.name + ')' : ''));
+  $('#load-state').textContent = parts.join(' · ');
+}
+
+function handleCandidatesText(text, fileName, keepReview) {
+  const { entries, errors } = parseJSONL(text);
+  if (errors.length) {
+    showWarning('Lignes ignorées dans ' + (fileName || 'le fichier de candidats'),
+      errors.map((error) => 'ligne ' + error.line + ' : ' + error.message));
+  }
+  if (!entries.length) {
+    toast('Aucune entrée exploitable dans ce fichier.');
+    if (!errors.length) showWarning('Fichier vide', ['Aucune ligne JSON exploitable dans ' + (fileName || 'ce fichier') + '.']);
+    return;
+  }
+  ingestCandidates(entries, fileName, Boolean(keepReview));
+  renderDaysNav();
+  renderDays();
+  applyFilters(false);
+  for (const key of state.days) updateDayButton(key);
+  updateLoadState();
+  refreshCounters();
+  saveReview();
+  toast(entries.length + ' candidat(s) chargé(s).');
+}
+
+function handleBaseText(text, fileName) {
+  const { entries, errors } = parseJSONL(text);
+  if (errors.length) {
+    showWarning('Lignes ignorées dans ' + (fileName || 'la base existante'),
+      errors.map((error) => 'ligne ' + error.line + ' : ' + error.message));
+  }
+  ingestBase(entries, fileName);
+  recomputeDuplicates();
+  for (const [uid] of cardNodes) { refreshCardLive(uid); refreshCardStatus(uid); }
+  applyFilters(true);
+  updateLoadState();
+  refreshCounters();
+  saveReview();
+  toast(entries.length + ' ligne(s) de base prises en compte.');
+}
+
+function readFile(file, handler) {
+  const reader = new FileReader();
+  reader.onload = () => handler(String(reader.result || ''), file.name);
+  reader.onerror = () => showWarning('Lecture impossible', ['Le fichier ' + file.name + ' n’a pas pu être lu.']);
+  reader.readAsText(file, 'utf-8');
+}
+
+function looksLikeBase(name) {
+  const lower = String(name).toLowerCase();
+  return !lower.includes('candidate') && /quotes\.jsonl$/.test(lower);
+}
+
+function fetchLocal(path, handler) {
+  const label = path.replace(/^\.\.\//, '');
+  fetch(path, { cache: 'no-store' })
+    .then((response) => {
+      if (!response.ok) throw new Error('réponse ' + response.status);
+      return response.text();
+    })
+    .then((text) => handler(text, label))
+    .catch((error) => {
+      showWarning('Lecture directe de ' + label + ' impossible', [
+        'Le navigateur refuse de lire un fichier voisin quand la page est ouverte depuis le disque (adresse en file://) : c’est une règle de sécurité, pas une erreur de la page.',
+        'Solution immédiate : utilisez le sélecteur de fichier ci-dessus et désignez ' + label + '.',
+        'Autre solution : servez le dossier du dépôt, par exemple avec « python3 -m http.server 8000 » à la racine, puis ouvrez la page à l’adresse http://localhost:8000/tools/review.html ; le bouton fonctionnera alors.',
+        'Détail technique : ' + (error && error.message ? error.message : String(error)) + '.',
+      ]);
+    });
+}
+
+function setupDropZone() {
+  const zone = $('#dropzone');
+  let depth = 0;
+  const show = () => { zone.hidden = false; };
+  const hide = () => { depth = 0; zone.hidden = true; };
+
+  window.addEventListener('dragenter', (event) => { event.preventDefault(); depth++; show(); });
+  window.addEventListener('dragover', (event) => { event.preventDefault(); show(); });
+  window.addEventListener('dragleave', (event) => {
+    event.preventDefault();
+    depth = Math.max(0, depth - 1);
+    if (!depth) hide();
+  });
+  window.addEventListener('drop', (event) => {
+    event.preventDefault();
+    hide();
+    const files = event.dataTransfer && event.dataTransfer.files ? Array.from(event.dataTransfer.files) : [];
+    if (!files.length) return;
+    for (const file of files) {
+      if (looksLikeBase(file.name)) readFile(file, handleBaseText);
+      else readFile(file, (text, name) => handleCandidatesText(text, name, true));
+    }
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Export actions
+// ---------------------------------------------------------------------------
+function downloadExport() {
+  const text = $('#export-text').value;
+  if (!text) { toast('Aucune ligne à exporter.'); return; }
+  const name = 'quotes-verifiees-' + TODAY.replace(/-/g, '') + '.jsonl';
+  const blob = new Blob([text], { type: 'application/x-ndjson;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const link = el('a', { href: url, download: name });
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+  toast('Fichier ' + name + ' produit.');
+}
+
+function fallbackCopy(area) {
+  area.focus();
+  area.select();
+  let done = false;
+  try {
+    done = document.execCommand('copy');
+  } catch (err) {
+    done = false;
+  }
+  toast(done ? 'Lignes copiées.' : 'Copie refusée par le navigateur : le texte est sélectionné, utilisez Ctrl+C.');
+}
+
+function copyExport() {
+  const area = $('#export-text');
+  if (!area.value) { toast('Aucune ligne à copier.'); return; }
+  if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+    navigator.clipboard.writeText(area.value)
+      .then(() => toast('Lignes copiées.'))
+      .catch(() => fallbackCopy(area));
+  } else {
+    fallbackCopy(area);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Demonstration set (obviously fake placeholder lines, never displayed by the
+// application: they only exist to try the page without a candidates file).
+// ---------------------------------------------------------------------------
+function demoText() {
+  const lines = [];
+  const dates = ['2019-01-01', '2021-01-02', '2020-02-29', '2022-07-14'];
+  dates.forEach((date, i) => {
+    const author = i % 2 === 0 ? 'trump' : 'musk';
+    lines.push(JSON.stringify({
+      id: 'exemple-' + date + '-' + pad2(i + 1) + '1',
+      author,
+      date,
+      text: 'EXEMPLE ' + pad2(i + 1) + ' - texte de démonstration sur le sujet ' + pad2(i + 1)
+        + ', à remplacer par la copie exacte de la source.\n  Deuxième ligne conservée telle quelle.',
+      lang: 'en',
+      medium: 'other',
+      source_url: 'https://example.org/',
+      source_type: 'archive',
+      verified: false,
+      added: TODAY,
+      tags: ['exemple', 'candidat'],
+    }));
+  });
+  lines.push('# ligne de commentaire ignorée');
+  lines.push('{ ceci n’est pas du JSON }');
+  return lines.join('\n');
+}
+
+// ---------------------------------------------------------------------------
+// Theme
+// ---------------------------------------------------------------------------
+function applyTheme(mode) {
+  if (mode === 'light' || mode === 'dark') document.documentElement.setAttribute('data-theme', mode);
+  else document.documentElement.removeAttribute('data-theme');
+  $('#theme-btn').textContent = 'Thème : ' + (mode === 'light' ? 'clair' : mode === 'dark' ? 'sombre' : 'auto');
+  try {
+    localStorage.setItem(THEME_KEY, mode);
+  } catch (err) {
+    /* theme choice simply is not remembered */
+  }
+}
+
+function initTheme() {
+  let mode = 'auto';
+  try {
+    mode = localStorage.getItem(THEME_KEY) || 'auto';
+  } catch (err) {
+    mode = 'auto';
+  }
+  applyTheme(mode);
+  $('#theme-btn').addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    applyTheme(current === 'light' ? 'dark' : current === 'dark' ? 'auto' : 'light');
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Sticky header height, used by the day panel and by scroll-margin-top
+// ---------------------------------------------------------------------------
+function trackHeaderHeight() {
+  const header = document.querySelector('.topbar');
+  const update = () => {
+    document.documentElement.style.setProperty('--head-h', Math.round(header.getBoundingClientRect().height) + 'px');
+  };
+  update();
+  window.addEventListener('resize', update);
+  if (typeof ResizeObserver === 'function') new ResizeObserver(update).observe(header);
+}
+
+// ---------------------------------------------------------------------------
+// Init
+// ---------------------------------------------------------------------------
+function restore() {
+  const payload = loadStored();
+  if (!payload) {
+    setStorageState(state.storageOk
+      ? 'Aucune revue enregistrée dans ce navigateur pour l’instant.'
+      : 'Enregistrement local indisponible dans ce navigateur : la revue sera perdue au rechargement.');
+    return;
+  }
+  if (payload.base && payload.base.loaded) {
+    state.base = {
+      loaded: true,
+      count: Number(payload.base.count) || 0,
+      ids: new Set(Array.isArray(payload.base.ids) ? payload.base.ids : []),
+      hashes: new Set(Array.isArray(payload.base.hashes) ? payload.base.hashes : []),
+      days: new Set(Array.isArray(payload.base.days) ? payload.base.days : []),
+      name: payload.base.name || '',
+    };
+  }
+  if (payload.filters && typeof payload.filters === 'object') {
+    state.filters.status = payload.filters.status || 'all';
+    state.filters.author = payload.filters.author || 'all';
+    state.filters.hideDup = Boolean(payload.filters.hideDup);
+    $('#f-status').value = state.filters.status;
+    $('#f-author').value = state.filters.author;
+    $('#f-dup').checked = state.filters.hideDup;
+  }
+  const stored = payload.review && typeof payload.review === 'object' ? payload.review : {};
+  if (Array.isArray(payload.candidates) && payload.candidates.length) {
+    ingestCandidates(payload.candidates, payload.cand_file || '', false);
+    state.review = Object.create(null);
+    for (const [uid, item] of Object.entries(stored)) {
+      if (state.byUid.has(uid)) state.review[uid] = item;
+    }
+    renderDaysNav();
+    renderDays();
+    applyFilters(false);
+    for (const key of state.days) updateDayButton(key);
+    setStorageState('Revue reprise depuis ce navigateur (enregistrée le '
+      + (payload.saved_at ? new Date(payload.saved_at).toLocaleString('fr-FR') : 'date inconnue') + ').');
+  } else {
+    state.review = Object.create(null);
+    for (const [uid, item] of Object.entries(stored)) state.review[uid] = item;
+    setStorageState('Décisions retrouvées dans ce navigateur : rechargez le fichier de candidats pour les réappliquer.');
+  }
+  updateLoadState();
+}
+
+function init() {
+  initTheme();
+  trackHeaderHeight();
+  setupDropZone();
+
+  $('#file-cand').addEventListener('change', (event) => {
+    const file = event.target.files && event.target.files[0];
+    if (file) readFile(file, (text, name) => handleCandidatesText(text, name, true));
+  });
+  $('#file-base').addEventListener('change', (event) => {
+    const file = event.target.files && event.target.files[0];
+    if (file) readFile(file, handleBaseText);
+  });
+  $('#fetch-cand').addEventListener('click', () => {
+    fetchLocal('../data/quotes.candidates.jsonl', (text, name) => handleCandidatesText(text, name, true));
+  });
+  $('#fetch-base').addEventListener('click', () => fetchLocal('../data/quotes.jsonl', handleBaseText));
+  $('#demo-btn').addEventListener('click', () => handleCandidatesText(demoText(), 'démonstration', false));
+
+  $('#f-status').addEventListener('change', (event) => {
+    state.filters.status = event.target.value;
+    applyFilters(true);
+    scheduleSave();
+  });
+  $('#f-author').addEventListener('change', (event) => {
+    state.filters.author = event.target.value;
+    applyFilters(true);
+    scheduleSave();
+  });
+  $('#f-dup').addEventListener('change', (event) => {
+    state.filters.hideDup = event.target.checked;
+    applyFilters(true);
+    scheduleSave();
+  });
+
+  $('#download-btn').addEventListener('click', downloadExport);
+  $('#copy-btn').addEventListener('click', copyExport);
+  $('#reset-btn').addEventListener('click', () => {
+    const question = 'Réinitialiser la revue ? Les décisions, contextes et traductions saisis dans ce navigateur seront effacés.';
+    if (!window.confirm(question)) return;
+    clearStored();
+    state.review = Object.create(null);
+    state.cands = [];
+    state.byUid = new Map();
+    state.dayUids = new Map();
+    state.days = [];
+    state.base = { loaded: false, count: 0, ids: new Set(), hashes: new Set(), days: new Set(), name: '' };
+    state.candFileName = '';
+    state.current = -1;
+    $('#warnings').textContent = '';
+    $('#file-cand').value = '';
+    $('#file-base').value = '';
+    renderDaysNav();
+    renderDays();
+    applyFilters(false);
+    updateLoadState();
+    refreshCounters();
+    setStorageState('Revue réinitialisée.');
+    toast('Revue réinitialisée.');
+  });
+
+  restore();
+  updateLoadState();
+  refreshCounters();
+}
+
+init();
+</script>
+</body>
+</html>

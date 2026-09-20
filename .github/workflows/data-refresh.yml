@@ -1,0 +1,63 @@
+name: Rafraichissement des donnees climatiques
+
+on:
+  schedule:
+    # Tous les jours a 06:30 UTC : ERA5 est publie avec environ cinq jours de delai.
+    - cron: '30 6 * * *'
+  workflow_dispatch:
+    inputs:
+      full:
+        description: 'Recalcul complet (ignore le fichier existant)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Climatologie par lieu (mise a jour incrementale)
+        run: |
+          if [ "${{ inputs.full }}" = "true" ]; then
+            python3 scripts/build_climatology.py --full
+          else
+            python3 scripts/build_climatology.py
+          fi
+
+      # Les series Berkeley Earth changent au plus une fois par mois : le lundi suffit.
+      - name: References pre-industrielles (le lundi ou sur demande)
+        env:
+          MANUAL: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          if [ "$MANUAL" = "true" ] || [ "$(date -u +%u)" = "1" ]; then
+            python3 scripts/build_baselines.py
+          else
+            echo "Hors lundi : baselines.json inchange."
+          fi
+
+      - name: Validation des fichiers produits
+        run: python3 scripts/validate_data.py
+
+      - name: Commit si un fichier a change
+        run: |
+          if [ -z "$(git status --porcelain data)" ]; then
+            echo "Aucun changement."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          git commit -m "data: refresh climatology $(date -u +%Y-%m-%d)"
+          git push

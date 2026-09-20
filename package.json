@@ -1,0 +1,22 @@
+{
+  "name": "ephemeride-climatique",
+  "version": "0.1.0",
+  "description": "Calendrier perpetuel : ephemeride du jour, citation datee, meteo et climate stripes. Application statique pour GitHub Pages.",
+  "private": true,
+  "type": "module",
+  "author": "Jerome Gavet",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test \"tests/js/*.test.js\"",
+    "test:py": "python3 -m unittest discover -s tests/python -p 'test_*.py'",
+    "validate": "python3 scripts/validate_quotes.py data/quotes.jsonl && python3 scripts/validate_data.py",
+    "check": "node scripts/check_sources.mjs",
+    "serve": "python3 -m http.server 8000"
+  },
+  "devDependencies": {
+    "jsdom": "^24.0.0"
+  }
+}

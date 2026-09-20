@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "_note": "Premier lieu = lieu par defaut. Coordonnees issues de l'API de geocodage Open-Meteo (GeoNames). Ajouter un objet pour precalculer un nouveau lieu ; l'Action quotidienne produit data/climatology/<slug>.json.",
+  "locations": [
+    {
+      "slug": "grenoble",
+      "label": "Grenoble",
+      "admin1": "Auvergne-Rhône-Alpes",
+      "country": "France",
+      "lat": 45.17869,
+      "lon": 5.71479,
+      "timezone": "Europe/Paris",
+      "country_code": "FR",
+      "elevation": 218,
+      "berkeley_region": "france",
+      "berkeley_fallback": "europe",
+      "geocoding_source": "https://geocoding-api.open-meteo.com/v1/search?name=Grenoble&count=1&language=fr&format=json",
+      "geocoding_id": 3014728
+    }
+  ]
+}

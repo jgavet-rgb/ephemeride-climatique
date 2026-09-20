@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.open-meteo.com https://archive-api.open-meteo.com https://geocoding-api.open-meteo.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; base-uri 'self'; form-action 'none'">
+  <meta name="description" content="Calendrier perpétuel : éphéméride du jour, citation datée, météo et climate stripes depuis 1940.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#1d3557">
+  <title>Éphéméride climatique</title>
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='8' height='32' fill='%232166ac'/%3E%3Crect x='8' width='8' height='32' fill='%23d1e5f0'/%3E%3Crect x='16' width='8' height='32' fill='%23f4a582'/%3E%3Crect x='24' width='8' height='32' fill='%23b2182b'/%3E%3C/svg%3E">
+</head>
+<body>
+  <a class="skip" href="#main">Aller au contenu</a>
+  <div id="live" class="sr-only" aria-live="polite"></div>
+  <div id="app">
+    <noscript><p class="error">Cette application a besoin de JavaScript pour calculer l’éphéméride et afficher la météo.</p></noscript>
+    <p class="loading">Chargement…</p>
+  </div>
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
