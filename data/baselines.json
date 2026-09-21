@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-18T06:28:35Z",
+  "generated_at": "2026-09-21T13:12:04Z",
   "method": "delta_c = moyenne des anomalies annuelles 1991-2020 - moyenne des anomalies annuelles 1850-1900 ; anomalie annuelle = moyenne des 12 anomalies mensuelles (>= 10 mois valides) ; chaque fenetre exige >= 25 annees valides",
   "regions": {
     "france": {
@@ -21,7 +21,7 @@
       "attribution": "Berkeley Earth (berkeleyearth.org)",
       "licence": "CC BY-NC 4.0",
       "analysis_date": "06-Jan-2021 15:35:34",
-      "fetched_at": "2026-09-18T06:28:35Z",
+      "fetched_at": "2026-09-21T13:12:04Z",
       "fallback_from": null,
       "note": null
     }
